@@ -92,6 +92,11 @@ script:
                 level: WARN
                 format: "Feeder skipped: hopper empty"
             - script.stop: dispense_feed
+      # Power budget: never run the auger (~2 A) while the door actuator (~3 A) moves.
+      - wait_until:
+          condition:
+            lambda: 'return id(coop_door).current_operation == COVER_OPERATION_IDLE;'
+          timeout: 90s
       - switch.turn_on: feeder_motor
       - delay: !lambda 'return (uint32_t) (id(feeder_run_seconds).state * 1000.0f);'
       - switch.turn_off: feeder_motor

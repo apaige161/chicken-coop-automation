@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="620" viewBox="0 0 1500 620">
+<rect x="0" y="0" width="1500" height="620" fill="#ffffff"/>
+<text x="20.0" y="34.0" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#1f2933" text-anchor="start" font-weight="bold">Coop elevations: 4/12 gable roof, 8 ft walls, floor ~12 in. up on skids</text>
+<line x1="30.0" y1="520.0" x2="720.0" y2="520.0" stroke="#616e7c" stroke-width="1"/>
+<rect x="60.0" y="490.0" width="600.0" height="6.0" rx="0" fill="#c89f68" stroke="#8d6e4a" stroke-width="1.5"/>
+<rect x="67.0" y="496.0" width="16.0" height="24.0" rx="0" fill="#9c7a4d" stroke="#8d6e4a" stroke-width="1"/>
+<rect x="352.0" y="496.0" width="16.0" height="24.0" rx="0" fill="#9c7a4d" stroke="#8d6e4a" stroke-width="1"/>
+<rect x="637.0" y="496.0" width="16.0" height="24.0" rx="0" fill="#9c7a4d" stroke="#8d6e4a" stroke-width="1"/>
+<rect x="60.0" y="247.6" width="600.0" height="242.4" rx="0" fill="#f3ead9" stroke="#8d6e4a" stroke-width="3"/>
+<polygon points="30.0,247.6 690.0,247.6 690.0,237.6 30.0,237.6" fill="#9aa5b1" stroke="#1f2933" stroke-width="1.5"/>
+<rect x="150.0" y="307.6" width="60.0" height="90.0" rx="0" fill="#cfe8ff" stroke="#1f2933" stroke-width="1.5"/>
+<rect x="285.0" y="307.6" width="60.0" height="90.0" rx="0" fill="#cfe8ff" stroke="#1f2933" stroke-width="1.5"/>
+<rect x="405.0" y="307.6" width="60.0" height="90.0" rx="0" fill="#cfe8ff" stroke="#1f2933" stroke-width="1.5"/>
+<rect x="525.0" y="430.0" width="30.0" height="40.0" rx="0" fill="#ffe08a" stroke="#1f2933" stroke-width="1.5"/>
+<polyline points="525.0,470.0 480.0,520.0" fill="none" stroke="#c89f68" stroke-width="4"/>
+<text x="558.0" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="normal">pop door + ramp</text>
+<rect x="75.0" y="256.6" width="570.0" height="15.0" rx="0" fill="none" stroke="#616e7c" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="360.0" y="268.6" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="middle" font-weight="normal">soffit vent strip (hardware cloth) full length</text>
+<line x1="60.0" y1="550.0" x2="660.0" y2="550.0" stroke="#616e7c" stroke-width="1"/>
+<line x1="60.0" y1="545.0" x2="60.0" y2="555.0" stroke="#616e7c" stroke-width="1"/>
+<line x1="660.0" y1="545.0" x2="660.0" y2="555.0" stroke="#616e7c" stroke-width="1"/>
+<text x="360.0" y="545.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#616e7c" text-anchor="middle" font-weight="normal">20'-0"</text>
+<line x1="710.0" y1="247.6" x2="710.0" y2="520.0" stroke="#616e7c" stroke-width="1"/>
+<line x1="705.0" y1="247.6" x2="715.0" y2="247.6" stroke="#616e7c" stroke-width="1"/>
+<line x1="705.0" y1="520.0" x2="715.0" y2="520.0" stroke="#616e7c" stroke-width="1"/>
+<text x="704.0" y="383.8" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#616e7c" text-anchor="middle" font-weight="normal" transform="rotate(-90 704 383.8)">~9'-1" to eave</text>
+<text x="360.0" y="217.6" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#1f2933" text-anchor="middle" font-weight="bold">SOUTH (FRONT) ELEVATION</text>
+<line x1="860.0" y1="520.0" x2="1290.0" y2="520.0" stroke="#616e7c" stroke-width="1"/>
+<rect x="896.0" y="490.0" width="308.0" height="6.0" rx="0" fill="#c89f68" stroke="#8d6e4a" stroke-width="1.5"/>
+<rect x="899.5" y="496.0" width="16.0" height="24.0" rx="0" fill="#9c7a4d" stroke="#8d6e4a" stroke-width="1"/>
+<rect x="1042.0" y="496.0" width="16.0" height="24.0" rx="0" fill="#9c7a4d" stroke="#8d6e4a" stroke-width="1"/>
+<rect x="1184.5" y="496.0" width="16.0" height="24.0" rx="0" fill="#9c7a4d" stroke="#8d6e4a" stroke-width="1"/>
+<polygon points="900.0,490.0 900.0,247.6 1050.0,197.6 1200.0,247.6 1200.0,490.0" fill="#f3ead9" stroke="#8d6e4a" stroke-width="3"/>
+<polyline points="870.0,257.6 1050.0,189.6 1230.0,257.6" fill="none" stroke="#1f2933" stroke-width="5"/>
+<rect x="1036.0" y="183.6" width="28.0" height="8.0" rx="0" fill="#9aa5b1" stroke="#1f2933" stroke-width="1"/>
+<text x="1050.0" y="175.6" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="middle" font-weight="normal">ridge vent</text>
+<rect x="1086.0" y="290.0" width="90.0" height="200.0" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.5"/>
+<text x="1131.0" y="400.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="middle" font-weight="normal">36"x80"</text>
+<rect x="855.0" y="382.0" width="45.0" height="66.0" rx="0" fill="#fff3d6" stroke="#8d6e4a" stroke-width="2"/>
+<text x="852.0" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="end" font-weight="normal">nest bay</text>
+<rect x="1026.0" y="220.6" width="48.0" height="24.0" rx="0" fill="#cfe8ff" stroke="#1f2933" stroke-width="1.5"/>
+<text x="1080.0" y="274.6" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="start" font-weight="normal">gable vent + 12 V fan (above)</text>
+<line x1="900.0" y1="550.0" x2="1200.0" y2="550.0" stroke="#616e7c" stroke-width="1"/>
+<line x1="900.0" y1="545.0" x2="900.0" y2="555.0" stroke="#616e7c" stroke-width="1"/>
+<line x1="1200.0" y1="545.0" x2="1200.0" y2="555.0" stroke="#616e7c" stroke-width="1"/>
+<text x="1050.0" y="545.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#616e7c" text-anchor="middle" font-weight="normal">10'-0"</text>
+<line x1="1270.0" y1="197.6" x2="1270.0" y2="520.0" stroke="#616e7c" stroke-width="1"/>
+<line x1="1265.0" y1="197.6" x2="1275.0" y2="197.6" stroke="#616e7c" stroke-width="1"/>
+<line x1="1265.0" y1="520.0" x2="1275.0" y2="520.0" stroke="#616e7c" stroke-width="1"/>
+<text x="1264.0" y="358.8" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#616e7c" text-anchor="middle" font-weight="normal" transform="rotate(-90 1264 358.8)">~10'-9" ridge</text>
+<line x1="840.0" y1="490.0" x2="840.0" y2="520.0" stroke="#616e7c" stroke-width="1"/>
+<line x1="835.0" y1="490.0" x2="845.0" y2="490.0" stroke="#616e7c" stroke-width="1"/>
+<line x1="835.0" y1="520.0" x2="845.0" y2="520.0" stroke="#616e7c" stroke-width="1"/>
+<text x="834.0" y="505.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#616e7c" text-anchor="middle" font-weight="normal" transform="rotate(-90 834 505.0)">~12"</text>
+<text x="1050.0" y="153.6" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#1f2933" text-anchor="middle" font-weight="bold">EAST (END) ELEVATION</text>
+<text x="60.0" y="580.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">Framing: 4x6 PT skids on 4" compacted gravel; 2x6 PT floor joists 16" o.c.; 2x4 studs 16" o.c.; 2x6 rafters 24" o.c. with collar ties; 2x4 purlins 24" o.c.; 29 ga ribbed steel roofing.</text>
+<text x="60.0" y="598.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#c0392b" text-anchor="start" font-weight="normal">Check rafter size/spacing against your local ground snow load before building (see coop-build-plan.md).</text>
+</svg>

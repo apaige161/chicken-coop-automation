@@ -36,10 +36,10 @@ if the controller, WiFi or Home Assistant fails:
 | Parameter | Rule of thumb | Design value |
 |---|---|---|
 | Indoor floor area | 4 sq ft/bird | **10 ft × 20 ft = 200 sq ft** |
-| Nest boxes | 1 per 4–5 hens | **12 boxes**, 12"×12"×12", external rollout access |
-| Roost length | 8–10 in/bird | **4 bars × 10 ft = 40 ft** (9.6 in/bird) |
+| Nest boxes | 1 per 4–5 hens | **12 boxes** in one row (12"W × 12"H × 14"D), exterior bay on the north wall, floor 20" up, so all boxes sit below the 36–40" roosts |
+| Roost length | 8–10 in/bird | **5 bars × 9 ft = 45 ft** (10.8 in/bird), spanning the 9'-5" interior width |
 | Ventilation | ~1 sq ft per 10 sq ft floor | **≥20 sq ft** of screened soffit, gable and window openings |
-| Pop door | 1 per ~50 birds | **12" W × 16" H**, vertical guillotine, actuator-driven |
+| Pop door | 1 per ~50 birds | **12" W × 16" H**, vertical guillotine, 12 V 18"-stroke actuator |
 | Secure run (bad-weather days) | ~10 sq ft/bird | **20 ft × 25 ft = 500 sq ft**, roofed or netted |
 | Feed | ~0.25 lb/bird/day | **~12.5 lb/day** (~90 lb/week) |
 | Water | ~0.12–0.25 gal/bird/day | **6–12 gal/day**. A 30 gal reservoir lasts 2.5–5 days |
@@ -79,7 +79,7 @@ House panel --[20 A GFCI breaker]-- UF-B 12/2 (buried per code) --> Coop weather
    Mains box (NEMA 4X / IP65), DIN rail:
      - 2-pole disconnect / 20 A breaker
      - GFCI receptacle (if not GFCI at panel)
-     - Mean Well HDR-60-12 (12 V 5 A DIN PSU) ---> 12 V to controller box
+     - Mean Well HDR-100-12N (12 V 7.1 A DIN PSU) ---> 12 V to controller box
      - SSR1 (DC control 3-32 V, 120 V AC 10 A+) -> coop LED lights
      - SSR2 (same)                             -> water de-icer / heated base (<= 500 W)
    Optional: 12 V 7 Ah SLA battery + float charger for door backup during power cuts

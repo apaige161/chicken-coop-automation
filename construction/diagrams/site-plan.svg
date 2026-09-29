@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="900" viewBox="0 0 1300 900">
+<rect x="0" y="0" width="1300" height="900" fill="#ffffff"/>
+<text x="20.0" y="34.0" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#1f2933" text-anchor="start" font-weight="bold">Site plan: coop, secure run and rotational free-range paddocks (not to exact scale)</text>
+<rect x="520.0" y="250.0" width="140.0" height="70.0" rx="0" fill="#f3ead9" stroke="#8d6e4a" stroke-width="3"/>
+<text x="590.0" y="289.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#1f2933" text-anchor="middle" font-weight="bold">COOP</text>
+<rect x="502.5" y="320.0" width="175.0" height="140.0" rx="0" fill="#eef7ee" stroke="#3f9142" stroke-width="3"/>
+<text x="590.0" y="383.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#1f2933" text-anchor="middle" font-weight="bold">SECURE RUN</text>
+<text x="590.0" y="398.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="middle" font-weight="normal">20 x 25 ft (500 sq ft)</text>
+<text x="590.0" y="412.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="middle" font-weight="normal">netted, 24" apron</text>
+<rect x="673.5" y="376.0" width="8.0" height="21.0" rx="0" fill="#ffe08a" stroke="#1f2933" stroke-width="1.5"/>
+<rect x="579.5" y="456.0" width="21.0" height="8.0" rx="0" fill="#ffe08a" stroke="#1f2933" stroke-width="1.5"/>
+<rect x="498.5" y="376.0" width="8.0" height="21.0" rx="0" fill="#ffe08a" stroke="#1f2933" stroke-width="1.5"/>
+<rect x="720.0" y="180.0" width="420.0" height="245.0" rx="0" fill="none" stroke="#3f9142" stroke-width="2" stroke-dasharray="10,6"/>
+<text x="930.0" y="299.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#3f9142" text-anchor="middle" font-weight="bold">PADDOCK A</text>
+<text x="930.0" y="315.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="middle" font-weight="normal">~164 ft electric poultry netting</text>
+<text x="930.0" y="329.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="middle" font-weight="normal">2-4 weeks per rotation</text>
+<rect x="380.0" y="510.0" width="420.0" height="245.0" rx="0" fill="none" stroke="#3f9142" stroke-width="2" stroke-dasharray="10,6"/>
+<text x="590.0" y="629.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#3f9142" text-anchor="middle" font-weight="bold">PADDOCK B</text>
+<text x="590.0" y="645.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="middle" font-weight="normal">~164 ft electric poultry netting</text>
+<text x="590.0" y="659.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="middle" font-weight="normal">2-4 weeks per rotation</text>
+<rect x="40.0" y="250.0" width="420.0" height="245.0" rx="0" fill="none" stroke="#3f9142" stroke-width="2" stroke-dasharray="10,6"/>
+<text x="250.0" y="369.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#3f9142" text-anchor="middle" font-weight="bold">PADDOCK C</text>
+<text x="250.0" y="385.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="middle" font-weight="normal">~164 ft electric poultry netting</text>
+<text x="250.0" y="399.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="middle" font-weight="normal">2-4 weeks per rotation</text>
+<rect x="60.0" y="70.0" width="180.0" height="60.0" rx="6" fill="#f5f7fa" stroke="#1f2933" stroke-width="1.5"/>
+<text x="68.0" y="88.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f2933" text-anchor="start" font-weight="bold">House</text>
+<text x="68.0" y="106.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">120 V panel, hose spigot</text>
+<polyline points="240.0,92.0 653.0,92.0 653.0,250.0" fill="none" stroke="#b8860b" stroke-width="3"/>
+<text x="661.0" y="130.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#b8860b" text-anchor="start" font-weight="normal">UF-B 12/2 (GFCI),</text>
+<text x="661.0" y="144.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#b8860b" text-anchor="start" font-weight="normal">trench per code</text>
+<polyline points="240.0,114.0 604.0,114.0 604.0,250.0" fill="none" stroke="#2186c4" stroke-width="3" stroke-dasharray="8,4"/>
+<text x="596.0" y="140.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#2186c4" text-anchor="end" font-weight="normal">drinking-water hose</text>
+<text x="596.0" y="154.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#2186c4" text-anchor="end" font-weight="normal">(seasonal)</text>
+<circle cx="420.0" cy="185.0" r="50" fill="#dff0d8" stroke="#3f9142" stroke-width="1.5"/>
+<text x="420.0" y="182.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#3f9142" text-anchor="middle" font-weight="normal">deciduous shade</text>
+<text x="420.0" y="196.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="middle" font-weight="normal">(summer shade)</text>
+<polygon points="1230.0,90.0 1221.0,120.0 1239.0,120.0" fill="#1f2933" stroke="#1f2933" stroke-width="1.5"/>
+<text x="1230.0" y="140.0" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#1f2933" text-anchor="middle" font-weight="bold">N</text>
+<text x="40.0" y="800.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#616e7c" text-anchor="start" font-weight="normal">Long glazed wall faces SOUTH for winter sun; partial shade from the west/south-west in summer.</text>
+<text x="40.0" y="818.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#616e7c" text-anchor="start" font-weight="normal">Set the coop on high, well-drained ground. Keep the run 50+ ft from wells/streams (check local rules).</text>
+<text x="40.0" y="836.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#616e7c" text-anchor="start" font-weight="normal">Free-range most of the day: rotate paddocks every 2-4 weeks so the ground recovers (~0.25-0.5 acre total).</text>
+<text x="40.0" y="854.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#616e7c" text-anchor="start" font-weight="normal">Birds return to the coop at dusk; the auto door closes at civil dusk (sun -6 deg) and alerts HA if not closed.</text>
+<text x="40.0" y="872.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#616e7c" text-anchor="start" font-weight="normal">Electric netting keeps out dogs, foxes and coyotes by day. It does NOT stop hawks, so leave shrubs/cover.</text>
+</svg>

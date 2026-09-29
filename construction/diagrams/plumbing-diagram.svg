@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="640" viewBox="0 0 1400 640">
+<rect x="0" y="0" width="1400" height="640" fill="#ffffff"/>
+<text x="20.0" y="34.0" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#1f2933" text-anchor="start" font-weight="bold">Water supply: spigot to reservoir (see construction/plumbing.md)</text>
+<rect x="20.0" y="200.0" width="185.0" height="90.0" rx="6" fill="#f5f7fa" stroke="#1f2933" stroke-width="1.5"/>
+<text x="28.0" y="218.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f2933" text-anchor="start" font-weight="bold">Hose spigot</text>
+<text x="28.0" y="236.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">existing, frost-free</text>
+<text x="28.0" y="252.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">preferred</text>
+<line x1="205.0" y1="245.0" x2="235.0" y2="245.0" stroke="#2186c4" stroke-width="5"/>
+<rect x="235.0" y="200.0" width="185.0" height="90.0" rx="6" fill="#f5f7fa" stroke="#1f2933" stroke-width="1.5"/>
+<text x="243.0" y="218.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f2933" text-anchor="start" font-weight="bold">Vacuum breaker</text>
+<text x="243.0" y="236.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">hose-bib backflow</text>
+<text x="243.0" y="252.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">preventer (required)</text>
+<line x1="420.0" y1="245.0" x2="450.0" y2="245.0" stroke="#2186c4" stroke-width="5"/>
+<rect x="450.0" y="200.0" width="185.0" height="90.0" rx="6" fill="#f5f7fa" stroke="#1f2933" stroke-width="1.5"/>
+<text x="458.0" y="218.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f2933" text-anchor="start" font-weight="bold">Y-valve + shutoff</text>
+<text x="458.0" y="236.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">keep 1 port for</text>
+<text x="458.0" y="252.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">the garden hose</text>
+<line x1="635.0" y1="245.0" x2="665.0" y2="245.0" stroke="#2186c4" stroke-width="5"/>
+<rect x="665.0" y="200.0" width="185.0" height="90.0" rx="6" fill="#f5f7fa" stroke="#1f2933" stroke-width="1.5"/>
+<text x="673.0" y="218.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f2933" text-anchor="start" font-weight="bold">Pressure regulator</text>
+<text x="673.0" y="236.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">25 psi, 3/4" GHT</text>
+<text x="673.0" y="252.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">(protects valve/floats)</text>
+<line x1="850.0" y1="245.0" x2="880.0" y2="245.0" stroke="#2186c4" stroke-width="5"/>
+<rect x="880.0" y="200.0" width="185.0" height="90.0" rx="6" fill="#f5f7fa" stroke="#1f2933" stroke-width="1.5"/>
+<text x="888.0" y="218.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f2933" text-anchor="start" font-weight="bold">Inline filter</text>
+<text x="888.0" y="236.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">40-100 mesh</text>
+<text x="888.0" y="252.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">screen filter</text>
+<line x1="1065.0" y1="245.0" x2="1095.0" y2="245.0" stroke="#2186c4" stroke-width="5"/>
+<rect x="1095.0" y="200.0" width="185.0" height="90.0" rx="6" fill="#f5f7fa" stroke="#1f2933" stroke-width="1.5"/>
+<text x="1103.0" y="218.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f2933" text-anchor="start" font-weight="bold">Drinking-water hose</text>
+<text x="1103.0" y="236.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">lead-free, 5/8"</text>
+<text x="1103.0" y="252.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">bury 12" or run in</text>
+<text x="1103.0" y="268.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">foam pipe insulation</text>
+<line x1="1187.0" y1="290.0" x2="1187.0" y2="380.0" stroke="#2186c4" stroke-width="5"/>
+<rect x="1060.0" y="380.0" width="200.0" height="90.0" rx="6" fill="#f5f7fa" stroke="#2f6fbd" stroke-width="1.5"/>
+<text x="1068.0" y="398.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f2933" text-anchor="start" font-weight="bold">12 V NC solenoid</text>
+<text x="1068.0" y="416.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">1/2" brass, pilot type</text>
+<text x="1068.0" y="432.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">VALVE (J4) opens it</text>
+<text x="1068.0" y="448.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">fails CLOSED</text>
+<line x1="1060.0" y1="425.0" x2="900.0" y2="425.0" stroke="#2186c4" stroke-width="5"/>
+<rect x="600.0" y="330.0" width="300.0" height="250.0" rx="10" fill="#e8f4fb" stroke="#1f2933" stroke-width="2"/>
+<text x="610.0" y="352.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#1f2933" text-anchor="start" font-weight="bold">30 gal food-grade drum (inside coop,</text>
+<text x="610.0" y="368.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#1f2933" text-anchor="start" font-weight="bold">on a 24" stand, lid screened)</text>
+<rect x="603.0" y="430.0" width="294.0" height="147.0" rx="0" fill="#bfe3f5" stroke="none" stroke-width="1.5"/>
+<line x1="603.0" y1="430.0" x2="897.0" y2="430.0" stroke="#2186c4" stroke-width="2" stroke-dasharray="5,3"/>
+<line x1="640.0" y1="380.0" x2="640.0" y2="470.0" stroke="#1f2933" stroke-width="1.5"/>
+<circle cx="640.0" cy="470.0" r="9" fill="#fff" stroke="#1f2933" stroke-width="1.5"/>
+<text x="655.0" y="474.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="normal">LOW float (J7) -&gt; start fill</text>
+<line x1="700.0" y1="360.0" x2="700.0" y2="410.0" stroke="#1f2933" stroke-width="1.5"/>
+<circle cx="700.0" cy="410.0" r="9" fill="#fff" stroke="#1f2933" stroke-width="1.5"/>
+<text x="715.0" y="404.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="normal">HIGH float (J7) -&gt; stop fill</text>
+<line x1="840.0" y1="360.0" x2="840.0" y2="540.0" stroke="#1f2933" stroke-width="1.5"/>
+<rect x="835.0" y="540.0" width="10.0" height="25.0" rx="0" fill="#555" stroke="none" stroke-width="1.5"/>
+<text x="760.0" y="556.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="end" font-weight="normal">DS18B20 (J8)</text>
+<text x="610.0" y="520.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">de-icer (SSR2) in winter</text>
+<line x1="897.0" y1="360.0" x2="960.0" y2="360.0" stroke="#2186c4" stroke-width="3"/>
+<line x1="960.0" y1="360.0" x2="960.0" y2="620.0" stroke="#2186c4" stroke-width="3" stroke-dasharray="6,4"/>
+<text x="968.0" y="600.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">3/4" overflow to outside</text>
+<text x="968.0" y="614.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">(protects the litter if a float sticks)</text>
+<line x1="600.0" y1="560.0" x2="300.0" y2="560.0" stroke="#2186c4" stroke-width="4"/>
+<line x1="300.0" y1="560.0" x2="300.0" y2="600.0" stroke="#2186c4" stroke-width="4"/>
+<line x1="120.0" y1="600.0" x2="480.0" y2="600.0" stroke="#2186c4" stroke-width="4"/>
+<line x1="140.0" y1="600.0" x2="140.0" y2="612.0" stroke="#1f2933" stroke-width="2"/>
+<line x1="180.0" y1="600.0" x2="180.0" y2="612.0" stroke="#1f2933" stroke-width="2"/>
+<line x1="220.0" y1="600.0" x2="220.0" y2="612.0" stroke="#1f2933" stroke-width="2"/>
+<line x1="260.0" y1="600.0" x2="260.0" y2="612.0" stroke="#1f2933" stroke-width="2"/>
+<line x1="300.0" y1="600.0" x2="300.0" y2="612.0" stroke="#1f2933" stroke-width="2"/>
+<line x1="340.0" y1="600.0" x2="340.0" y2="612.0" stroke="#1f2933" stroke-width="2"/>
+<line x1="380.0" y1="600.0" x2="380.0" y2="612.0" stroke="#1f2933" stroke-width="2"/>
+<line x1="420.0" y1="600.0" x2="420.0" y2="612.0" stroke="#1f2933" stroke-width="2"/>
+<line x1="460.0" y1="600.0" x2="460.0" y2="612.0" stroke="#1f2933" stroke-width="2"/>
+<text x="120.0" y="630.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">3/4" PVC drinker line, 8 horizontal nipples/cups per 10 ft (1 per 6 birds, 10+ total), 12-14" high</text>
+<rect x="20.0" y="380.0" width="520.0" height="150.0" rx="6" fill="#f0fff4" stroke="#3f9142" stroke-width="1.5"/>
+<text x="28.0" y="398.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f2933" text-anchor="start" font-weight="bold">Tier 1 (low-tech)</text>
+<text x="28.0" y="416.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">Skip the solenoid: fill the drum by hand with the hose,</text>
+<text x="28.0" y="432.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">or fit a MECHANICAL float valve (stock-tank type)</text>
+<text x="28.0" y="448.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">fed by the same regulator/filter chain.</text>
+<text x="28.0" y="464.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">30 gal lasts 2.5-5 days for 50 birds.</text>
+<text x="28.0" y="480.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">Tier 2 adds the solenoid + floats + DS18B20 (this drawing).</text>
+<text x="20.0" y="90.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#c0392b" text-anchor="start" font-weight="normal">Winter: disconnect and drain the hose below freezing (the firmware also refuses to fill when the water is near 0 C).</text>
+<text x="20.0" y="108.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#c0392b" text-anchor="start" font-weight="normal">Hand-fill through the lid, or use a heated hose rated for drinking water.</text>
+</svg>

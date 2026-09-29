@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1370" height="760" viewBox="0 0 1370 760">
+<rect x="0" y="0" width="1370" height="760" fill="#ffffff"/>
+<text x="20.0" y="34.0" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#1f2933" text-anchor="start" font-weight="bold">Coop floor plan: 10 ft x 20 ft (200 sq ft), north up</text>
+<rect x="110.0" y="170.0" width="840.0" height="420.0" rx="0" fill="#fbf7ef" stroke="#8d6e4a" stroke-width="8"/>
+<line x1="110.0" y1="668.0" x2="950.0" y2="668.0" stroke="#616e7c" stroke-width="1"/>
+<line x1="110.0" y1="663.0" x2="110.0" y2="673.0" stroke="#616e7c" stroke-width="1"/>
+<line x1="950.0" y1="663.0" x2="950.0" y2="673.0" stroke="#616e7c" stroke-width="1"/>
+<text x="530.0" y="663.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#616e7c" text-anchor="middle" font-weight="normal">20'-0" outside</text>
+<line x1="50.0" y1="170.0" x2="50.0" y2="590.0" stroke="#616e7c" stroke-width="1"/>
+<line x1="45.0" y1="170.0" x2="55.0" y2="170.0" stroke="#616e7c" stroke-width="1"/>
+<line x1="45.0" y1="590.0" x2="55.0" y2="590.0" stroke="#616e7c" stroke-width="1"/>
+<text x="44.0" y="380.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#616e7c" text-anchor="middle" font-weight="normal" transform="rotate(-90 44 380.0)">10'-0"</text>
+<rect x="143.6" y="191.0" width="218.4" height="378.0" rx="0" fill="#efe6d6" stroke="#616e7c" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="149.6" y="561.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">poop board @ 24" (PDZ/sand)</text>
+<rect x="160.6" y="195.0" width="8.0" height="348.0" rx="0" fill="#c89f68" stroke="#8d6e4a" stroke-width="1"/>
+<rect x="206.8" y="195.0" width="8.0" height="348.0" rx="0" fill="#c89f68" stroke="#8d6e4a" stroke-width="1"/>
+<rect x="253.0" y="195.0" width="8.0" height="348.0" rx="0" fill="#c89f68" stroke="#8d6e4a" stroke-width="1"/>
+<rect x="299.2" y="195.0" width="8.0" height="348.0" rx="0" fill="#c89f68" stroke="#8d6e4a" stroke-width="1"/>
+<rect x="345.4" y="195.0" width="8.0" height="348.0" rx="0" fill="#c89f68" stroke="#8d6e4a" stroke-width="1"/>
+<text x="149.6" y="207.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#1f2933" text-anchor="start" font-weight="bold">ROOSTS: 5 x 9 ft 2x4 (wide face up)</text>
+<text x="149.6" y="223.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">@ 36" high, 13" apart, 45 ft total</text>
+<rect x="383.0" y="117.5" width="546.0" height="52.5" rx="0" fill="#fff3d6" stroke="#8d6e4a" stroke-width="2"/>
+<line x1="428.5" y1="117.5" x2="428.5" y2="170.0" stroke="#8d6e4a" stroke-width="1"/>
+<line x1="474.0" y1="117.5" x2="474.0" y2="170.0" stroke="#8d6e4a" stroke-width="1"/>
+<line x1="519.5" y1="117.5" x2="519.5" y2="170.0" stroke="#8d6e4a" stroke-width="1"/>
+<line x1="565.0" y1="117.5" x2="565.0" y2="170.0" stroke="#8d6e4a" stroke-width="1"/>
+<line x1="610.5" y1="117.5" x2="610.5" y2="170.0" stroke="#8d6e4a" stroke-width="1"/>
+<line x1="656.0" y1="117.5" x2="656.0" y2="170.0" stroke="#8d6e4a" stroke-width="1"/>
+<line x1="701.5" y1="117.5" x2="701.5" y2="170.0" stroke="#8d6e4a" stroke-width="1"/>
+<line x1="747.0" y1="117.5" x2="747.0" y2="170.0" stroke="#8d6e4a" stroke-width="1"/>
+<line x1="792.5" y1="117.5" x2="792.5" y2="170.0" stroke="#8d6e4a" stroke-width="1"/>
+<line x1="838.0" y1="117.5" x2="838.0" y2="170.0" stroke="#8d6e4a" stroke-width="1"/>
+<line x1="883.5" y1="117.5" x2="883.5" y2="170.0" stroke="#8d6e4a" stroke-width="1"/>
+<text x="656.0" y="109.5" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="middle" font-weight="normal">12 NEST BOXES (single row, 12x12x14" deep), exterior bay, floor 20" up, hinged lid outside</text>
+<rect x="944.0" y="430.4" width="12.0" height="126.0" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.5"/>
+<polyline points="950.0,430.4 824.0,430.4 950.0,556.4" fill="none" stroke="#616e7c" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="962.0" y="493.4" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="normal">36" door (east)</text>
+<rect x="761.0" y="584.0" width="42.0" height="12.0" rx="0" fill="#ffe08a" stroke="#1f2933" stroke-width="1.5"/>
+<text x="782.0" y="616.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="middle" font-weight="bold">POP DOOR 12"x16"</text>
+<text x="782.0" y="630.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="middle" font-weight="normal">actuator above (inside), ramp to run</text>
+<rect x="236.0" y="585.0" width="84.0" height="10.0" rx="0" fill="#cfe8ff" stroke="#1f2933" stroke-width="1"/>
+<rect x="425.0" y="585.0" width="84.0" height="10.0" rx="0" fill="#cfe8ff" stroke="#1f2933" stroke-width="1"/>
+<rect x="593.0" y="585.0" width="84.0" height="10.0" rx="0" fill="#cfe8ff" stroke="#1f2933" stroke-width="1"/>
+<text x="425.0" y="616.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="start" font-weight="normal">24"x36" windows: 1/2" hardware cloth + sliding/hinged shutters</text>
+<rect x="105.0" y="338.0" width="10.0" height="84.0" rx="0" fill="#cfe8ff" stroke="#1f2933" stroke-width="1"/>
+<text x="120.0" y="438.6" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="start" font-weight="normal">window (west)</text>
+<circle cx="509.0" cy="346.4" r="37.800000000000004" fill="#f3e3c3" stroke="#1f2933" stroke-width="1.5"/>
+<text x="509.0" y="350.4" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="middle" font-weight="bold">FEEDERS</text>
+<text x="509.0" y="364.4" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#616e7c" text-anchor="middle" font-weight="normal">2x hanging / treadle</text>
+<circle cx="635.0" cy="514.4" r="37.800000000000004" fill="#d6ecfa" stroke="#1f2933" stroke-width="1.5"/>
+<text x="635.0" y="518.4" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="middle" font-weight="bold">30 gal DRUM</text>
+<line x1="635.0" y1="476.6" x2="635.0" y2="422.0" stroke="#2186c4" stroke-width="4"/>
+<line x1="572.0" y1="422.0" x2="782.0" y2="422.0" stroke="#2186c4" stroke-width="4"/>
+<text x="786.2" y="426.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="start" font-weight="normal">nipple/cup line</text>
+<rect x="450.2" y="489.2" width="58.8" height="58.8" rx="0" fill="#f3e3c3" stroke="#1f2933" stroke-width="1.5"/>
+<text x="479.6" y="522.6" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1f2933" text-anchor="middle" font-weight="bold">HOPPER</text>
+<text x="479.6" y="534.6" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#616e7c" text-anchor="middle" font-weight="normal">+ auger</text>
+<rect x="914.8" y="304.4" width="16.0" height="50.4" rx="0" fill="#fff3b0" stroke="#b8860b" stroke-width="2"/>
+<text x="908.8" y="318.4" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#b8860b" text-anchor="end" font-weight="normal">mains box</text>
+<rect x="914.8" y="363.2" width="16.0" height="37.8" rx="0" fill="#dcecff" stroke="#2f6fbd" stroke-width="2"/>
+<text x="908.8" y="377.2" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#2f6fbd" text-anchor="end" font-weight="normal">controller</text>
+<circle cx="362.0" cy="380.0" r="8" fill="#fffbe6" stroke="#b8860b" stroke-width="1.5"/>
+<circle cx="698.0" cy="380.0" r="8" fill="#fffbe6" stroke="#b8860b" stroke-width="1.5"/>
+<text x="374.0" y="384.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#b8860b" text-anchor="start" font-weight="normal">light</text>
+<text x="215.0" y="450.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="start" font-weight="normal">PIR aimed over roosts</text>
+<text x="966.0" y="186.8" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="start" font-weight="normal">gable fan (J14)</text>
+<polygon points="1040.0,178.0 1031.0,208.0 1049.0,208.0" fill="#1f2933" stroke="#1f2933" stroke-width="1.5"/>
+<text x="1040.0" y="226.0" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#1f2933" text-anchor="middle" font-weight="bold">N</text>
+<text x="990.0" y="260.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">Floor: 3/4" PT plywood + sheet vinyl,</text>
+<text x="990.0" y="277.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">  8-12" deep-litter pine shavings</text>
+<text x="990.0" y="294.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">Ventilation &gt;= 20 sq ft: full soffit +</text>
+<text x="990.0" y="311.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">  ridge vent + 3 windows + gables,</text>
+<text x="990.0" y="328.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">  all 1/2" hardware cloth</text>
+<text x="990.0" y="345.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">Roosts higher than nest boxes</text>
+<text x="990.0" y="362.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">  (boxes 18-24" off floor)</text>
+<text x="990.0" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">Keep feed/water out from under roosts</text>
+<text x="990.0" y="396.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">4 sq ft/bird indoors = 200 sq ft</text>
+</svg>

@@ -37,7 +37,8 @@ jobs:
           python construction/gen_diagrams.py
           git diff --exit-code construction/diagrams
       - name: yamllint (HA config)
-        run: yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" docs/ha
+        run: |
+          yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" docs/ha
 
   firmware-compile:
     runs-on: ubuntu-latest

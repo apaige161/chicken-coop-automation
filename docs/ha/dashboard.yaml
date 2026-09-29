@@ -1,0 +1,80 @@
+# Coop dashboard. In HA: Settings -> Dashboards -> Add dashboard -> (open it) -> ⋮ ->
+# Edit dashboard -> ⋮ -> Raw configuration editor, and paste this in.
+title: Coop
+views:
+  - title: Coop
+    path: coop
+    icon: mdi:barn
+    cards:
+      - type: tile
+        entity: cover.coop_pop_door
+        features:
+          - type: cover-open-close
+      - type: glance
+        title: Status
+        show_state: true
+        entities:
+          - entity: binary_sensor.coop_controller_online
+            name: Online
+          - entity: binary_sensor.coop_door_fault
+            name: Door
+          - entity: binary_sensor.coop_water_fill_lockout
+            name: Water
+          - entity: binary_sensor.coop_feed_low
+            name: Feed
+          - entity: binary_sensor.coop_night_motion
+            name: Night motion
+      - type: horizontal-stack
+        cards:
+          - type: gauge
+            entity: sensor.coop_feed_level
+            name: Feed
+            min: 0
+            max: 100
+            severity: {green: 40, yellow: 15, red: 0}
+          - type: gauge
+            entity: sensor.coop_water_temperature
+            name: Water °C
+            min: -10
+            max: 35
+          - type: gauge
+            entity: sensor.coop_coop_humidity
+            name: Humidity
+            min: 0
+            max: 100
+            severity: {green: 0, yellow: 70, red: 85}
+      - type: history-graph
+        title: Climate (48 h)
+        hours_to_show: 48
+        entities:
+          - entity: sensor.coop_coop_temperature
+          - entity: sensor.coop_water_temperature
+          - entity: sensor.coop_coop_humidity
+      - type: entities
+        title: Controls
+        entities:
+          - switch.coop_door_auto_mode
+          - switch.coop_water_auto_fill
+          - switch.coop_feeder_auto_schedule
+          - switch.coop_light_auto_winter_supplement
+          - switch.coop_coop_light
+          - switch.coop_de_icer_auto
+          - switch.coop_water_de_icer
+          - switch.coop_fan_auto
+          - switch.coop_exhaust_fan
+          - button.coop_dispense_feed_now
+          - button.coop_water_fill_now
+          - button.coop_water_fill_lockout_reset
+      - type: entities
+        title: Power & diagnostics
+        entities:
+          - sensor.coop_12v_supply_voltage
+          - sensor.coop_outdoor_light
+          - sensor.coop_sun_elevation
+          - sensor.coop_next_sunrise
+          - sensor.coop_next_sunset
+          - sensor.coop_wifi_signal
+          - sensor.coop_uptime
+      # Optional camera (firmware/coop-camera.yaml):
+      # - type: picture-entity
+      #   entity: camera.coop_camera_coop_camera

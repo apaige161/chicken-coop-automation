@@ -145,7 +145,7 @@ def wiring(pm):
     s.text(340, 100, 'MAINS ENCLOSURE (NEMA 4X / IP65, DIN rail), inside coop, 5 ft up', 13, weight='bold')
     s.box(345, 115, 180, 60, 'Disconnect / 20 A', ['2-pole DIN breaker'], fill='#fff')
     s.box(545, 115, 190, 60, 'GFCI receptacle', ['service outlet (tools, brooder)'], fill='#fff')
-    s.box(345, 190, 180, 70, 'PSU Mean Well', ['HDR-100-12N, 12 V 7.1 A', 'L / N / PE in, +V / -V out'], fill='#fff')
+    s.box(345, 190, 180, 70, 'PSU Mean Well', ['HDR-100-12N, 12 V 7.5 A', 'L / N / PE in, +V / -V out'], fill='#fff')
     s.box(545, 190, 190, 70, 'SSR1 (lights)', ['DC ctrl 3-32 V, 120 VAC 10 A+', 'switches HOT only'], fill='#fff')
     s.box(545, 275, 190, 70, 'SSR2 (de-icer)', ['DC ctrl 3-32 V, 120 VAC 25 A', 'switches HOT only'], fill='#fff')
     s.box(345, 275, 180, 70, 'Ground bar', ['all PE + metal parts bonded'], fill='#fff')

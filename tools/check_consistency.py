@@ -6,6 +6,7 @@ hardware/pinmap.yaml is the source of truth. This fails (exit 1) if:
   * the PCB ESP32 socket pin for a GPIO is not on the net named after its signal
   * a PCB connector's pins differ from the pin map
   * the GPIO table in PROJECT_SPEC.md disagrees with the pin map
+  * docs/ha/*.yaml or docs/home-assistant.md reference an entity the firmware doesn't create
   * (if kicad-cli is available) the generated schematic netlist differs from pcb/design.py
 
 Usage:  python tools/check_consistency.py
@@ -117,6 +118,28 @@ def check_spec(pm):
                 err(f'GPIO{g}: spec says {spec.get(g)}, pin map says {pmap.get(g)}')
 
 
+def _slug(s):
+    return re.sub(r'_+', '_', re.sub(r'[^a-z0-9]+', '_', s.lower())).strip('_')
+
+
+def check_ha_entities():
+    print('Home Assistant YAML/docs entity IDs vs firmware entity names')
+    names = set()
+    for fn in glob.glob(os.path.join(ROOT, 'firmware', '**', '*.yaml'), recursive=True):
+        with open(fn, encoding='utf-8') as f:
+            for m in re.finditer(r'^\s*-?\s*name:\s*"?([^"\n#]+?)"?\s*$', f.read(), re.M):
+                names.add('coop_' + _slug(m.group(1)))
+    files = glob.glob(os.path.join(ROOT, 'docs', 'ha', '*.yaml')) + [os.path.join(ROOT, 'docs', 'home-assistant.md')]
+    pat = re.compile(r'\b(?:cover|switch|sensor|binary_sensor|button|number)\.(coop_[a-z0-9_]+)')
+    for fn in files:
+        with open(fn, encoding='utf-8') as f:
+            text = f.read()
+        for m in pat.finditer(text):
+            ent = m.group(1).rstrip('_')
+            if ent not in names:
+                err(f'{os.path.relpath(fn, ROOT)} references {m.group(0)}, which no firmware entity produces')
+
+
 def check_schematic_netlist():
     cli = shutil.which('kicad-cli') or os.path.expanduser(
         r'~\AppData\Local\Programs\KiCad\10.0\bin\kicad-cli.exe')
@@ -150,6 +173,7 @@ def main():
     check_firmware(pm)
     check_pcb(pm)
     check_spec(pm)
+    check_ha_entities()
     check_schematic_netlist()
     if errors:
         print(f'\n{len(errors)} consistency error(s)')

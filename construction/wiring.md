@@ -104,7 +104,7 @@ This comes from `hardware/pinmap.yaml`, so it always matches the PCB and firmwar
 | Exhaust fan | 0.3–1 A | hot/humid periods |
 | SSR inputs | 2 × 10 mA | |
 
-The worst realistic simultaneous load is about 4.5 A, within the 7.1 A PSU and the
+The worst realistic simultaneous load is about 4.5 A, within the 7.5 A PSU and the
 PCB's 5 A slow-blow fuse.
 
 ## 6. Installation practice

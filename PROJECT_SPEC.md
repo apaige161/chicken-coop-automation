@@ -79,7 +79,7 @@ House panel --[20 A GFCI breaker]-- UF-B 12/2 (buried per code) --> Coop weather
    Mains box (NEMA 4X / IP65), DIN rail:
      - 2-pole disconnect / 20 A breaker
      - GFCI receptacle (if not GFCI at panel)
-     - Mean Well HDR-100-12N (12 V 7.1 A DIN PSU) ---> 12 V to controller box
+     - Mean Well HDR-100-12N (12 V 7.5 A DIN PSU) ---> 12 V to controller box
      - SSR1 (DC control 3-32 V, 120 V AC 10 A+) -> coop LED lights
      - SSR2 (same)                             -> water de-icer / heated base (<= 500 W)
    Optional: 12 V 7 Ah SLA battery + float charger for door backup during power cuts

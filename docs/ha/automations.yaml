@@ -1,0 +1,93 @@
+# Home Assistant automations for the coop. Paste into automations.yaml (or split them up
+# via the UI). Replace `notify.notify` with your notifier (e.g. notify.mobile_app_<phone>).
+# Entity IDs assume the ESPHome device friendly_name "Coop". Check Settings -> Entities
+# if yours differ.
+
+- id: coop_problem_alert
+  alias: "Coop: problem alert"
+  description: Push a notification when any coop problem sensor turns on.
+  mode: queued
+  triggers:
+    - trigger: state
+      entity_id:
+        - binary_sensor.coop_door_open_after_dark
+        - binary_sensor.coop_door_fault
+        - binary_sensor.coop_water_fill_lockout
+        - binary_sensor.coop_water_float_fault
+        - binary_sensor.coop_water_freeze_risk
+        - binary_sensor.coop_feed_low
+        - binary_sensor.coop_12v_supply_low
+      to: "on"
+  actions:
+    - action: notify.notify
+      data:
+        title: "Coop alert"
+        message: "{{ trigger.to_state.name }} ({{ now().strftime('%H:%M') }})"
+
+- id: coop_night_motion
+  alias: "Coop: motion at night"
+  description: Motion inside the coop after dark with the door shut, possibly a predator.
+  mode: single
+  triggers:
+    - trigger: state
+      entity_id: binary_sensor.coop_night_motion
+      to: "on"
+  actions:
+    - action: notify.notify
+      data:
+        title: "Coop: motion at night"
+        message: "Movement in the coop with the door closed. Check the camera."
+    - delay: "00:10:00"   # don't spam: at most one alert per 10 minutes
+
+- id: coop_controller_offline
+  alias: "Coop: controller offline"
+  description: The controller keeps running locally, but you've lost visibility.
+  triggers:
+    - trigger: state
+      entity_id: binary_sensor.coop_controller_online
+      to: "off"
+      for: "00:15:00"
+  actions:
+    - action: notify.notify
+      data:
+        title: "Coop controller offline"
+        message: >-
+          No contact for 15 min. Door/water/feed logic still runs on the device, but check
+          WiFi and power.
+
+- id: coop_door_closed_confirmation
+  alias: "Coop: door closed confirmation"
+  description: Evening confirmation (silent unless the door did NOT close).
+  triggers:
+    - trigger: sun
+      event: sunset
+      offset: "01:00:00"
+  conditions:
+    - condition: not
+      conditions:
+        - condition: state
+          entity_id: cover.coop_pop_door
+          state: closed
+  actions:
+    - action: notify.notify
+      data:
+        title: "Coop door still open!"
+        message: "Pop door is {{ states('cover.coop_pop_door') }} an hour after sunset."
+
+- id: coop_vacation_mode_off
+  alias: "Coop: re-enable auto door after manual override day"
+  description: If someone turned Door Auto Mode off, turn it back on at 03:00 so it can't be forgotten.
+  triggers:
+    - trigger: time
+      at: "03:00:00"
+  conditions:
+    - condition: state
+      entity_id: switch.coop_door_auto_mode
+      state: "off"
+  actions:
+    - action: switch.turn_on
+      target:
+        entity_id: switch.coop_door_auto_mode
+    - action: notify.notify
+      data:
+        message: "Coop door auto mode was off; re-enabled it."

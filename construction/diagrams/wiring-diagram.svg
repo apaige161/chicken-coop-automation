@@ -18,7 +18,7 @@
 <text x="553.0" y="151.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">service outlet (tools, brooder)</text>
 <rect x="345.0" y="190.0" width="180.0" height="70.0" rx="6" fill="#fff" stroke="#1f2933" stroke-width="1.5"/>
 <text x="353.0" y="208.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f2933" text-anchor="start" font-weight="bold">PSU Mean Well</text>
-<text x="353.0" y="226.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">HDR-100-12N, 12 V 7.1 A</text>
+<text x="353.0" y="226.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">HDR-100-12N, 12 V 7.5 A</text>
 <text x="353.0" y="242.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">L / N / PE in, +V / -V out</text>
 <rect x="545.0" y="190.0" width="190.0" height="70.0" rx="6" fill="#fff" stroke="#1f2933" stroke-width="1.5"/>
 <text x="553.0" y="208.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f2933" text-anchor="start" font-weight="bold">SSR1 (lights)</text>

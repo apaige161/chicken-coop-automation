@@ -1,0 +1,62 @@
+name: checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  firmware-and-consistency:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install tools
+        run: pip install esphome pyyaml yamllint
+      - name: CI secrets (random keys; never used on a real device)
+        run: |
+          python - <<'EOF'
+          import os, base64
+          k = lambda: base64.b64encode(os.urandom(32)).decode()
+          s = open('firmware/secrets.example.yaml').read()
+          s = s.replace('REPLACE_WITH_32_BYTE_BASE64_KEY_AAAAAAAAAAAAAA=', k())
+          s = s.replace('REPLACE_WITH_32_BYTE_BASE64_KEY_BBBBBBBBBBBBBB=', k())
+          open('firmware/secrets.yaml', 'w').write(s)
+          EOF
+      - name: ESPHome config validation
+        run: |
+          esphome config firmware/coop-controller.yaml > /dev/null
+          esphome config firmware/coop-camera.yaml > /dev/null
+      - name: Pin map / firmware / PCB / spec / HA consistency
+        run: python tools/check_consistency.py
+      - name: Parts list is up to date
+        run: python tools/gen_parts_list.py --check
+      - name: Diagrams regenerate cleanly
+        run: |
+          python construction/gen_diagrams.py
+          git diff --exit-code construction/diagrams
+      - name: yamllint (HA config)
+        run: yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" docs/ha
+
+  firmware-compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install esphome
+      - name: CI secrets
+        run: |
+          python -c "import os,base64;k=lambda:base64.b64encode(os.urandom(32)).decode();s=open('firmware/secrets.example.yaml').read().replace('REPLACE_WITH_32_BYTE_BASE64_KEY_AAAAAAAAAAAAAA=',k()).replace('REPLACE_WITH_32_BYTE_BASE64_KEY_BBBBBBBBBBBBBB=',k());open('firmware/secrets.yaml','w').write(s)"
+      - name: Compile controller firmware
+        run: esphome compile firmware/coop-controller.yaml
+
+  openscad:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y openscad
+      - name: Render all printable parts
+        run: bash 3d-printing/render.sh

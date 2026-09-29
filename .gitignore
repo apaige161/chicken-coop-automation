@@ -1,0 +1,19 @@
+# Secrets
+firmware/secrets.yaml
+# ESPHome build output
+firmware/.esphome/
+# KiCad transient files
+*.kicad_prl
+*-backups/
+fp-info-cache
+*.lck
+~*.lck
+pcb/*.dsn
+pcb/*.ses
+pcb/*.rpt
+pcb/route.log
+# Python
+__pycache__/
+*.pyc
+# 3D print render output (regenerate with 3d-printing/render.sh)
+3d-printing/stl/*.tmp

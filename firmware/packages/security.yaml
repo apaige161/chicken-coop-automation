@@ -1,0 +1,18 @@
+# Predator awareness: PIR motion inside the coop. "Night Motion" (motion while the door
+# is closed and the sun is down) is what HA should alert on. Daytime motion is just hens.
+
+binary_sensor:
+  - platform: gpio
+    id: coop_motion
+    name: "Coop Motion"
+    device_class: motion
+    pin:
+      number: GPIO39   # PIR (input-only; 10k pull-down on PCB)
+    filters:
+      - delayed_off: 30s
+  - platform: template
+    name: "Night Motion"
+    device_class: safety
+    lambda: |-
+      return id(coop_motion).state && id(door_closed_sensor).state &&
+             id(sun_pos).elevation() < -6.0;

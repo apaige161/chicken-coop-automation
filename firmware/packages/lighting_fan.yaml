@@ -1,0 +1,112 @@
+# Supplemental lighting (SSR1 -> 120 V LED lights) and a 12 V exhaust fan.
+#
+# Lighting: when the natural day is shorter than "Target Day Length", the lights come on
+# in the MORNING at (sunset - target) and turn off 15 min after sunrise. Adding light at
+# dawn instead of dusk means the birds still roost naturally as it gets dark. Like the
+# door, it only acts when the desired state changes, so manual switching holds until the
+# next transition.
+
+globals:
+  - id: light_last_desired
+    type: int
+    initial_value: "-1"
+
+switch:
+  - platform: gpio
+    id: coop_light
+    name: "Coop Light"
+    icon: mdi:lightbulb
+    pin: GPIO16   # LIGHT_SSR -> SSR1
+    restore_mode: ALWAYS_OFF
+  - platform: template
+    id: light_auto
+    name: "Light Auto (Winter Supplement)"
+    icon: mdi:weather-sunny-alert
+    optimistic: true
+    restore_mode: RESTORE_DEFAULT_ON
+  - platform: gpio
+    id: exhaust_fan
+    name: "Exhaust Fan"
+    icon: mdi:fan
+    pin: GPIO14   # FAN_DRV
+    restore_mode: ALWAYS_OFF
+  - platform: template
+    id: fan_auto
+    name: "Fan Auto"
+    icon: mdi:fan-auto
+    optimistic: true
+    restore_mode: RESTORE_DEFAULT_ON
+
+number:
+  - platform: template
+    id: light_target_hours
+    name: "Target Day Length"
+    entity_category: config
+    optimistic: true
+    restore_value: true
+    initial_value: 14
+    min_value: 10
+    max_value: 16
+    step: 0.5
+    unit_of_measurement: "h"
+  - platform: template
+    id: fan_on_temp
+    name: "Fan On Above"
+    entity_category: config
+    optimistic: true
+    restore_value: true
+    initial_value: 27
+    min_value: 15
+    max_value: 40
+    step: 0.5
+    unit_of_measurement: "°C"
+  - platform: template
+    id: fan_on_humidity
+    name: "Fan On Above Humidity"
+    entity_category: config
+    optimistic: true
+    restore_value: true
+    initial_value: 80
+    min_value: 50
+    max_value: 95
+    step: 1
+    unit_of_measurement: "%"
+
+interval:
+  - interval: 60s
+    then:
+      # --- Supplemental lighting ---
+      - lambda: |-
+          if (!id(light_auto).state) return;
+          auto now = id(sntp_time).now();
+          if (!now.is_valid()) now = id(ha_time).now();
+          if (!now.is_valid()) return;
+          auto rise = id(sun_pos).sunrise(-0.833);
+          auto set = id(sun_pos).sunset(-0.833);
+          if (!rise.has_value() || !set.has_value()) return;
+          const int rise_min = rise->hour * 60 + rise->minute;
+          const int set_min = set->hour * 60 + set->minute;
+          const int day_len = set_min - rise_min;
+          const int target = (int) (id(light_target_hours).state * 60.0f);
+          const int now_min = now.hour * 60 + now.minute;
+          int desired = 0;
+          if (day_len > 0 && day_len < target) {
+            // Never earlier than 04:00.
+            const int on_min = std::max(set_min - target, 4 * 60);
+            if (now_min >= on_min && now_min < rise_min + 15) desired = 1;
+          }
+          if (desired == id(light_last_desired)) return;
+          id(light_last_desired) = desired;
+          if (desired) id(coop_light).turn_on(); else id(coop_light).turn_off();
+      # --- Exhaust fan with 2 C / 5 % hysteresis ---
+      - lambda: |-
+          if (!id(fan_auto).state) return;
+          const float t = id(coop_temp).state;
+          const float h = id(coop_humidity).state;
+          if (std::isnan(t) && std::isnan(h)) return;
+          const bool hot = !std::isnan(t) && t >= id(fan_on_temp).state;
+          const bool humid = !std::isnan(h) && h >= id(fan_on_humidity).state;
+          const bool cool = std::isnan(t) || t <= id(fan_on_temp).state - 2.0f;
+          const bool dry = std::isnan(h) || h <= id(fan_on_humidity).state - 5.0f;
+          if ((hot || humid) && !id(exhaust_fan).state) id(exhaust_fan).turn_on();
+          else if (cool && dry && id(exhaust_fan).state) id(exhaust_fan).turn_off();

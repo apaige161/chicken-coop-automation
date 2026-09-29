@@ -1,0 +1,212 @@
+# Waterer: 30 gal reservoir filled from the hose spigot through a 12 V normally-closed
+# solenoid valve, with two float switches and a DS18B20 for freeze protection.
+#
+# Float wiring convention (see construction/plumbing.md): each float switch is mounted so
+# its contact CLOSES (to GND) when the water is BELOW that float. So a broken wire reads
+# "not below" and the fill logic never runs on a dead sensor. Fail-safe: no overflow.
+#
+# Fill: starts when the level drops below the LOW float and stops when it reaches the HIGH
+# float. If HIGH isn't reached within "Water Max Fill Time", the valve closes and a lockout
+# latches: likely a leak, empty supply, frozen hose or stuck float. Clear it with
+# "Water Fill Lockout Reset" once the cause is fixed.
+
+globals:
+  - id: water_lockout
+    type: bool
+    restore_value: true
+    initial_value: "false"
+
+one_wire:
+  - platform: gpio
+    pin: GPIO4   # ONEWIRE
+
+sensor:
+  - platform: dallas_temp
+    id: water_temp
+    name: "Water Temperature"
+    update_interval: 30s
+
+switch:
+  - platform: gpio
+    id: water_valve
+    name: "Water Fill Valve"
+    icon: mdi:valve
+    pin: GPIO27   # VALVE_DRV
+    restore_mode: ALWAYS_OFF
+    # Hard safety net even for manual opens: never leave the valve open for long.
+    on_turn_on:
+      - script.execute: valve_watchdog
+    on_turn_off:
+      - script.stop: valve_watchdog
+  - platform: gpio
+    id: heater_ssr
+    name: "Water De-icer"
+    icon: mdi:snowflake-melt
+    pin: GPIO17   # HEAT_SSR -> SSR2 (120 V de-icer)
+    restore_mode: ALWAYS_OFF
+  - platform: template
+    id: water_auto_fill
+    name: "Water Auto Fill"
+    icon: mdi:water-sync
+    optimistic: true
+    restore_mode: RESTORE_DEFAULT_ON
+  - platform: template
+    id: heater_auto
+    name: "De-icer Auto"
+    icon: mdi:thermostat-auto
+    optimistic: true
+    restore_mode: RESTORE_DEFAULT_ON
+
+binary_sensor:
+  - platform: gpio
+    id: water_below_low
+    name: "Water Below Low Mark"
+    pin:
+      number: GPIO34   # WATER_LOW (input-only; external 10k pull-up on PCB)
+      inverted: true
+    filters:
+      - delayed_on_off: 5s   # ignore sloshing
+    on_press:
+      - if:
+          condition:
+            lambda: 'return id(water_auto_fill).state && !id(water_lockout);'
+          then:
+            - script.execute: fill_water
+  - platform: gpio
+    id: water_below_high
+    name: "Water Below High Mark"
+    pin:
+      number: GPIO35   # WATER_HIGH (input-only; external 10k pull-up on PCB)
+      inverted: true
+    filters:
+      - delayed_on_off: 2s
+  - platform: template
+    name: "Water Fill Lockout"
+    device_class: problem
+    lambda: 'return id(water_lockout);'
+  - platform: template
+    name: "Water Float Fault"
+    device_class: problem
+    # Below the LOW float but NOT below the HIGH float is physically impossible.
+    lambda: 'return id(water_below_low).state && !id(water_below_high).state;'
+    filters:
+      - delayed_on: 30s
+  - platform: template
+    name: "Water Freeze Risk"
+    device_class: cold
+    lambda: 'return id(water_temp).state < 1.0;'
+
+number:
+  - platform: template
+    id: water_max_fill
+    name: "Water Max Fill Time"
+    entity_category: config
+    optimistic: true
+    restore_value: true
+    initial_value: 10
+    min_value: 1
+    max_value: 30
+    step: 1
+    unit_of_measurement: "min"
+  - platform: template
+    id: heater_on_temp
+    name: "De-icer On Below"
+    entity_category: config
+    optimistic: true
+    restore_value: true
+    initial_value: 3
+    min_value: 0
+    max_value: 10
+    step: 0.5
+    unit_of_measurement: "°C"
+  - platform: template
+    id: heater_off_temp
+    name: "De-icer Off Above"
+    entity_category: config
+    optimistic: true
+    restore_value: true
+    initial_value: 6
+    min_value: 1
+    max_value: 15
+    step: 0.5
+    unit_of_measurement: "°C"
+
+button:
+  - platform: template
+    name: "Water Fill Now"
+    icon: mdi:water-plus
+    on_press:
+      - if:
+          condition:
+            lambda: 'return !id(water_lockout);'
+          then:
+            - script.execute: fill_water
+  - platform: template
+    name: "Water Fill Lockout Reset"
+    icon: mdi:lock-reset
+    on_press:
+      - lambda: 'id(water_lockout) = false;'
+
+script:
+  - id: valve_watchdog
+    mode: restart
+    then:
+      # 1 minute of grace beyond the fill timeout so the fill script normally wins.
+      - delay: !lambda 'return (uint32_t) ((id(water_max_fill).state + 1.0f) * 60000.0f);'
+      - logger.log:
+          level: WARN
+          format: "Valve watchdog closed the water valve"
+      - switch.turn_off: water_valve
+  - id: fill_water
+    mode: single
+    then:
+      - if:
+          condition:
+            # Don't push water into a frozen hose/valve.
+            lambda: 'return !std::isnan(id(water_temp).state) && id(water_temp).state < 1.0;'
+          then:
+            - logger.log: "Fill skipped: water temperature near freezing"
+            - script.stop: fill_water
+      - if:
+          condition:
+            binary_sensor.is_off: water_below_high
+          then:
+            - logger.log: "Fill skipped: already at high mark"
+            - script.stop: fill_water
+      - logger.log: "Water fill started"
+      - switch.turn_on: water_valve
+      - wait_until:
+          condition:
+            binary_sensor.is_off: water_below_high
+          timeout: !lambda 'return (uint32_t) (id(water_max_fill).state * 60000.0f);'
+      - switch.turn_off: water_valve
+      - if:
+          condition:
+            binary_sensor.is_on: water_below_high
+          then:
+            - logger.log:
+                level: WARN
+                format: "Water fill timed out - lockout engaged"
+            - lambda: 'id(water_lockout) = true;'
+          else:
+            - logger.log: "Water fill complete"
+
+interval:
+  # De-icer thermostat with hysteresis. If the water probe fails, fall back to coop air
+  # temperature (on below 2 C) so the water doesn't freeze.
+  - interval: 30s
+    then:
+      - lambda: |-
+          if (!id(heater_auto).state) return;
+          const float wt = id(water_temp).state;
+          bool want = id(heater_ssr).state;
+          if (!std::isnan(wt)) {
+            if (wt <= id(heater_on_temp).state) want = true;
+            else if (wt >= id(heater_off_temp).state) want = false;
+          } else {
+            const float at = id(coop_temp).state;
+            want = !std::isnan(at) && at < 2.0f;
+          }
+          if (want != id(heater_ssr).state) {
+            if (want) id(heater_ssr).turn_on(); else id(heater_ssr).turn_off();
+          }

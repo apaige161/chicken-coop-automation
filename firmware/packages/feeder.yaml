@@ -1,0 +1,110 @@
+# Feeder: a 12 V gear motor turns an auger that moves feed from a 32 gal hopper into the
+# trough/gravity feeders. It runs twice a day for "Feeder Run Time" seconds. A JSN-SR04T
+# ultrasonic sensor in the hopper lid reports the feed level. The auger won't run with an
+# empty hopper, so the motor doesn't run dry and HA gets told instead.
+
+switch:
+  - platform: gpio
+    id: feeder_motor
+    name: "Feeder Auger"
+    icon: mdi:rotate-right
+    pin: GPIO13   # FEEDER_DRV
+    restore_mode: ALWAYS_OFF
+    on_turn_on:
+      - script.execute: feeder_watchdog
+    on_turn_off:
+      - script.stop: feeder_watchdog
+  - platform: template
+    id: feeder_auto
+    name: "Feeder Auto Schedule"
+    icon: mdi:calendar-clock
+    optimistic: true
+    restore_mode: RESTORE_DEFAULT_ON
+
+sensor:
+  - platform: ultrasonic
+    id: hopper_distance
+    name: "Feed Hopper Distance"
+    trigger_pin: GPIO18   # US_TRIG
+    echo_pin: GPIO19      # US_ECHO (5 V echo divided down on the PCB)
+    update_interval: 300s
+    timeout: 3m
+    entity_category: diagnostic
+    filters:
+      - median:
+          window_size: 5
+          send_every: 1
+  - platform: template
+    id: feed_level
+    name: "Feed Level"
+    icon: mdi:barley
+    unit_of_measurement: "%"
+    accuracy_decimals: 0
+    update_interval: 300s
+    lambda: |-
+      const float d = id(hopper_distance).state;
+      if (std::isnan(d)) return NAN;
+      const float empty = ${hopper_empty_distance};
+      const float full = ${hopper_full_distance};
+      float pct = (empty - d) / (empty - full) * 100.0f;
+      return std::max(0.0f, std::min(100.0f, pct));
+
+binary_sensor:
+  - platform: template
+    name: "Feed Low"
+    device_class: problem
+    lambda: 'return id(feed_level).state < 15.0;'
+
+number:
+  - platform: template
+    id: feeder_run_seconds
+    name: "Feeder Run Time"
+    entity_category: config
+    optimistic: true
+    restore_value: true
+    initial_value: 20
+    min_value: 1
+    max_value: 120
+    step: 1
+    unit_of_measurement: "s"
+
+button:
+  - platform: template
+    name: "Dispense Feed Now"
+    icon: mdi:food-drumstick
+    on_press:
+      - script.execute: dispense_feed
+
+script:
+  - id: feeder_watchdog
+    mode: restart
+    then:
+      - delay: 150s   # absolute cap, longer than max Feeder Run Time
+      - switch.turn_off: feeder_motor
+  - id: dispense_feed
+    mode: single
+    then:
+      - if:
+          condition:
+            lambda: 'return !std::isnan(id(feed_level).state) && id(feed_level).state < 2.0;'
+          then:
+            - logger.log:
+                level: WARN
+                format: "Feeder skipped: hopper empty"
+            - script.stop: dispense_feed
+      - switch.turn_on: feeder_motor
+      - delay: !lambda 'return (uint32_t) (id(feeder_run_seconds).state * 1000.0f);'
+      - switch.turn_off: feeder_motor
+
+time:
+  - id: !extend sntp_time
+    on_time:
+      - seconds: 0
+        minutes: 0
+        hours: ${feed_hour_am},${feed_hour_pm}
+        then:
+          - if:
+              condition:
+                switch.is_on: feeder_auto
+              then:
+                - script.execute: dispense_feed

@@ -1,0 +1,28 @@
+# Coop air temperature / humidity / pressure (BME280) and outdoor light level (BH1750).
+
+i2c:
+  sda: GPIO21   # I2C_SDA
+  scl: GPIO22   # I2C_SCL
+  scan: true
+  frequency: 100kHz   # conservative: sensors may be on a few metres of cable
+
+sensor:
+  - platform: bme280_i2c
+    address: 0x76
+    update_interval: 60s
+    temperature:
+      id: coop_temp
+      name: "Coop Temperature"
+      oversampling: 2x
+    humidity:
+      id: coop_humidity
+      name: "Coop Humidity"
+      oversampling: 2x
+    pressure:
+      name: "Coop Pressure"
+
+  - platform: bh1750
+    id: outdoor_lux
+    name: "Outdoor Light"
+    address: 0x23
+    update_interval: 60s

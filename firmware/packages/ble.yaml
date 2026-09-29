@@ -1,0 +1,26 @@
+# BLE: passive scanning for BLE thermometers, plus a Home Assistant Bluetooth proxy so any
+# BLE device near the coop (more thermometers, BTHome door/gate sensors, plant sensors)
+# can be added in HA later without changing firmware. That's the BLE upgrade path.
+#
+# The example sensor is a Xiaomi LYWSD03MMC flashed with the pvvx custom firmware
+# (https://github.com/pvvx/ATC_MiThermometer), which advertises unencrypted. Put one in the
+# nest-box row or a brooder. Replace the MAC below with yours (shown in the pvvx flasher).
+
+esp32_ble_tracker:
+  scan_parameters:
+    active: false   # passive scanning is enough and saves airtime for WiFi
+    interval: 320ms
+    window: 300ms   # <=600 ms so WiFi on the shared radio isn't starved
+
+bluetooth_proxy:
+  active: false
+
+sensor:
+  - platform: pvvx_mithermometer
+    mac_address: "A4:C1:38:00:00:01"   # <-- replace with your sensor's MAC
+    temperature:
+      name: "Nest Box Temperature"
+    humidity:
+      name: "Nest Box Humidity"
+    battery_level:
+      name: "Nest Box Sensor Battery"

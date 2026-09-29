@@ -1,0 +1,55 @@
+# Coop Controller - ESPHome firmware for the Coop Controller PCB (ESP32-DevKitC-32E).
+# GPIO assignments MUST match hardware/pinmap.yaml (checked by tools/check_consistency.py).
+#
+# All flock-critical logic (door schedule, water fill, freeze protection, lighting,
+# feeding) runs ON THE DEVICE. Home Assistant supervises and overrides, but the coop keeps
+# working with no WiFi / no HA. The built-in web UI (http://coop-controller.local) works
+# on the local network even without HA.
+
+substitutions:
+  name: coop-controller
+  friendly_name: Coop
+  # --- Edit for your site (used for sunrise/sunset door + lighting logic) ---
+  latitude: "40.0"
+  longitude: "-83.0"
+  timezone: "America/New_York"
+  # --- Feeder schedule (24 h clock, local time) ---
+  feed_hour_am: "7"
+  feed_hour_pm: "15"
+  # --- Feed hopper geometry for the ultrasonic level sensor (metres) ---
+  hopper_empty_distance: "0.80"   # sensor-to-bottom distance when hopper is empty
+  hopper_full_distance: "0.20"    # sensor-to-feed distance when hopper is full
+  # --- Voltage divider on VIN_SENSE: (100k + 22k) / 22k ---
+  vin_divider_ratio: "5.545"
+
+esphome:
+  name: ${name}
+  friendly_name: ${friendly_name}
+  comment: "50-bird coop controller (door, water, feed, climate, lighting)"
+  project:
+    name: "coop.controller"
+    version: "1.0.0"
+  on_boot:
+    priority: -100
+    then:
+      # Make sure every output starts OFF regardless of what the pins did during boot.
+      - switch.turn_off: door_open_relay
+      - switch.turn_off: door_close_relay
+      - switch.turn_off: water_valve
+      - switch.turn_off: feeder_motor
+
+esp32:
+  board: esp32dev
+  framework:
+    type: esp-idf
+
+packages:
+  base: !include packages/base.yaml
+  environment: !include packages/environment.yaml
+  door: !include packages/door.yaml
+  water: !include packages/water.yaml
+  feeder: !include packages/feeder.yaml
+  lighting_fan: !include packages/lighting_fan.yaml
+  security: !include packages/security.yaml
+  # Optional: BLE thermometer(s) in nest boxes / brooder. Set the MAC in the package.
+  ble: !include packages/ble.yaml

@@ -1,0 +1,214 @@
+# Automatic pop door: 12 V linear actuator driven by relays K1/K2 (2-relay H-bridge).
+#
+# Schedule (runs on-device, no HA needed):
+#   OPEN  when sun elevation >= "Door Open Sun Elevation" AND local time >= "Door Earliest Open"
+#   CLOSE when sun elevation <= "Door Close Sun Elevation" (default -6 deg = civil dusk,
+#         roughly 25-35 min after sunset, by which time the flock has gone in to roost)
+# If the clock isn't valid (power cut + no WiFi), it falls back to the BH1750 light level
+# (10 minutes above/below the thresholds).
+# The scheduler only acts when the desired state CHANGES, so a manual open/close (panel
+# button, HA or web UI) holds until the next scheduled transition.
+#
+# End stops: the actuator's internal limit switches are primary. Reed switches report
+# position and end the move. max_duration is the last-resort timeout.
+
+globals:
+  - id: door_last_desired
+    type: int
+    initial_value: "-1"   # -1 unknown, 0 closed, 1 open
+  - id: lux_bright_minutes
+    type: int
+    initial_value: "0"
+  - id: lux_dark_minutes
+    type: int
+    initial_value: "0"
+
+switch:
+  - platform: gpio
+    id: door_open_relay
+    pin: GPIO25   # DOOR_OPEN_RLY -> K1
+    internal: true
+    restore_mode: ALWAYS_OFF
+    interlock: [door_close_relay]
+    interlock_wait_time: 300ms
+  - platform: gpio
+    id: door_close_relay
+    pin: GPIO26   # DOOR_CLOSE_RLY -> K2
+    internal: true
+    restore_mode: ALWAYS_OFF
+    interlock: [door_open_relay]
+    interlock_wait_time: 300ms
+  - platform: template
+    id: door_auto
+    name: "Door Auto Mode"
+    icon: mdi:calendar-clock
+    optimistic: true
+    restore_mode: RESTORE_DEFAULT_ON
+
+binary_sensor:
+  - platform: gpio
+    id: door_closed_sensor
+    name: "Door Closed Switch"
+    pin:
+      number: GPIO32   # DOOR_CLOSED_SW
+      mode: INPUT_PULLUP
+      inverted: true
+    filters:
+      - delayed_on_off: 50ms
+  - platform: gpio
+    id: door_open_sensor
+    name: "Door Open Switch"
+    pin:
+      number: GPIO33   # DOOR_OPEN_SW
+      mode: INPUT_PULLUP
+      inverted: true
+    filters:
+      - delayed_on_off: 50ms
+  - platform: gpio
+    id: door_button
+    name: "Door Panel Button"
+    pin:
+      number: GPIO23   # DOOR_BTN
+      mode: INPUT_PULLUP
+      inverted: true
+    filters:
+      - delayed_on: 50ms
+    on_press:
+      - cover.toggle: coop_door
+  - platform: template
+    name: "Door Fault"
+    device_class: problem
+    # Stopped with neither end switch made: jammed, obstructed or a failed reed.
+    lambda: |-
+      return id(coop_door).current_operation == COVER_OPERATION_IDLE &&
+             !id(door_closed_sensor).state && !id(door_open_sensor).state;
+    filters:
+      - delayed_on: 60s
+  - platform: template
+    name: "Door Open After Dark"
+    device_class: safety
+    lambda: |-
+      return id(sun_pos).elevation() < id(door_close_elev).state - 2.0 &&
+             !id(door_closed_sensor).state;
+    filters:
+      - delayed_on: 30min
+
+cover:
+  - platform: endstop
+    id: coop_door
+    name: "Pop Door"
+    device_class: door
+    open_action:
+      - switch.turn_on: door_open_relay
+    open_duration: 25s
+    open_endstop: door_open_sensor
+    close_action:
+      - switch.turn_on: door_close_relay
+    close_duration: 25s
+    close_endstop: door_closed_sensor
+    stop_action:
+      - switch.turn_off: door_open_relay
+      - switch.turn_off: door_close_relay
+    max_duration: 35s
+
+number:
+  - platform: template
+    id: door_open_elev
+    name: "Door Open Sun Elevation"
+    icon: mdi:weather-sunset-up
+    entity_category: config
+    optimistic: true
+    restore_value: true
+    initial_value: 2
+    min_value: -6
+    max_value: 15
+    step: 0.5
+    unit_of_measurement: "°"
+  - platform: template
+    id: door_close_elev
+    name: "Door Close Sun Elevation"
+    icon: mdi:weather-sunset-down
+    entity_category: config
+    optimistic: true
+    restore_value: true
+    initial_value: -6
+    min_value: -12
+    max_value: 0
+    step: 0.5
+    unit_of_measurement: "°"
+  - platform: template
+    id: door_earliest_open
+    name: "Door Earliest Open"
+    icon: mdi:clock-start
+    entity_category: config
+    optimistic: true
+    restore_value: true
+    initial_value: 6.5
+    min_value: 4
+    max_value: 10
+    step: 0.25
+    unit_of_measurement: "h"
+  - platform: template
+    id: door_lux_open
+    name: "Door Fallback Open Lux"
+    entity_category: config
+    optimistic: true
+    restore_value: true
+    initial_value: 100
+    min_value: 5
+    max_value: 2000
+    step: 5
+    unit_of_measurement: "lx"
+  - platform: template
+    id: door_lux_close
+    name: "Door Fallback Close Lux"
+    entity_category: config
+    optimistic: true
+    restore_value: true
+    initial_value: 3
+    min_value: 0
+    max_value: 100
+    step: 1
+    unit_of_measurement: "lx"
+
+interval:
+  - interval: 60s
+    then:
+      - lambda: |-
+          if (!id(door_auto).state) return;
+          int desired = -1;
+          auto now = id(sntp_time).now();
+          if (!now.is_valid()) now = id(ha_time).now();
+
+          if (now.is_valid()) {
+            const double elev = id(sun_pos).elevation();
+            const float minutes = now.hour * 60 + now.minute;
+            if (elev <= id(door_close_elev).state) {
+              desired = 0;
+            } else if (elev >= id(door_open_elev).state &&
+                       minutes >= id(door_earliest_open).state * 60.0f) {
+              desired = 1;
+            }
+            // Between the two thresholds: no opinion, keep the current state.
+          } else {
+            // No valid clock: fall back to the light level with a 10 min confirmation.
+            const float lux = id(outdoor_lux).state;
+            if (!std::isnan(lux)) {
+              id(lux_bright_minutes) = lux >= id(door_lux_open).state ? id(lux_bright_minutes) + 1 : 0;
+              id(lux_dark_minutes) = lux <= id(door_lux_close).state ? id(lux_dark_minutes) + 1 : 0;
+              if (id(lux_bright_minutes) >= 10) desired = 1;
+              if (id(lux_dark_minutes) >= 10) desired = 0;
+            }
+          }
+
+          if (desired == -1 || desired == id(door_last_desired)) return;
+          id(door_last_desired) = desired;
+          auto call = id(coop_door).make_call();
+          if (desired == 1) {
+            ESP_LOGI("door", "Schedule: opening pop door");
+            call.set_command_open();
+          } else {
+            ESP_LOGI("door", "Schedule: closing pop door");
+            call.set_command_close();
+          }
+          call.perform();

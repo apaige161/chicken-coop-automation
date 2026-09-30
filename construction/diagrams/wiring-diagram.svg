@@ -21,13 +21,13 @@
 <text x="353.0" y="226.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">HDR-100-12N, 12 V 7.5 A</text>
 <text x="353.0" y="242.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">L / N / PE in, +V / -V out</text>
 <rect x="545.0" y="190.0" width="190.0" height="70.0" rx="6" fill="#fff" stroke="#1f2933" stroke-width="1.5"/>
-<text x="553.0" y="208.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f2933" text-anchor="start" font-weight="bold">SSR1 (lights)</text>
-<text x="553.0" y="226.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">DC ctrl 3-32 V, 120 VAC 10 A+</text>
-<text x="553.0" y="242.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">switches HOT only</text>
+<text x="553.0" y="208.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f2933" text-anchor="start" font-weight="bold">Relay 1 (lights)</text>
+<text x="553.0" y="226.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">DIN module, 12 VDC coil, 6 A</text>
+<text x="553.0" y="242.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">switches HOT only (or SSR)</text>
 <rect x="545.0" y="275.0" width="190.0" height="70.0" rx="6" fill="#fff" stroke="#1f2933" stroke-width="1.5"/>
-<text x="553.0" y="293.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f2933" text-anchor="start" font-weight="bold">SSR2 (de-icer)</text>
-<text x="553.0" y="311.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">DC ctrl 3-32 V, 120 VAC 25 A</text>
-<text x="553.0" y="327.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">switches HOT only</text>
+<text x="553.0" y="293.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f2933" text-anchor="start" font-weight="bold">Relay 2 (de-icer)</text>
+<text x="553.0" y="311.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">DIN module, 12 VDC coil, 6 A</text>
+<text x="553.0" y="327.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">switches HOT only (or SSR)</text>
 <rect x="345.0" y="275.0" width="180.0" height="70.0" rx="6" fill="#fff" stroke="#1f2933" stroke-width="1.5"/>
 <text x="353.0" y="293.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f2933" text-anchor="start" font-weight="bold">Ground bar</text>
 <text x="353.0" y="311.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">all PE + metal parts bonded</text>
@@ -43,13 +43,13 @@
 <rect x="800.0" y="280.0" width="230.0" height="70.0" rx="6" fill="#f5f7fa" stroke="#1f2933" stroke-width="1.5"/>
 <text x="808.0" y="298.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f2933" text-anchor="start" font-weight="bold">Water de-icer / heated base</text>
 <text x="808.0" y="316.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">250-500 W, thermostatic</text>
-<text x="808.0" y="332.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">plugged into SSR2 outlet</text>
+<text x="808.0" y="332.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">plugged into the relay-2 outlet</text>
 <line x1="735.0" y1="310.0" x2="800.0" y2="310.0" stroke="#b8860b" stroke-width="3"/>
 <line x1="435.0" y1="260.0" x2="435.0" y2="460.0" stroke="#d64545" stroke-width="3"/>
 <text x="442.0" y="440.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#d64545" text-anchor="start" font-weight="normal">+12 V / GND to J1</text>
 <polyline points="700.0,460.0 700.0,425.0 760.0,425.0 760.0,330.0 735.0,330.0" fill="none" stroke="#2f6fbd" stroke-width="2" stroke-dasharray="6,3"/>
 <polyline points="680.0,460.0 680.0,418.0 752.0,418.0 752.0,245.0 735.0,245.0" fill="none" stroke="#2f6fbd" stroke-width="2" stroke-dasharray="6,3"/>
-<text x="560.0" y="440.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#2f6fbd" text-anchor="start" font-weight="normal">J6: SSR control (12 V)</text>
+<text x="560.0" y="440.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#2f6fbd" text-anchor="start" font-weight="normal">J6: relay coils (12 V)</text>
 <rect x="20.0" y="205.0" width="290.0" height="90.0" rx="6" fill="#f0fff4" stroke="#3f9142" stroke-width="1.5"/>
 <text x="28.0" y="223.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f2933" text-anchor="start" font-weight="bold">Optional backup (Tier 2+)</text>
 <text x="28.0" y="241.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">12 V 7 Ah SLA + float charger</text>
@@ -114,8 +114,8 @@
 <text x="724.0" y="766.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="end" font-weight="normal">FEEDER-</text>
 <line x1="733.0" y1="762.0" x2="1060.0" y2="762.0" stroke="#2f6fbd" stroke-width="2"/>
 <rect x="1060.0" y="726.0" width="420.0" height="42.0" rx="4" fill="#f5f7fa" stroke="#1f2933" stroke-width="1"/>
-<text x="1068.0" y="741.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="bold">Feed auger gear motor, 12 V</text>
-<text x="1068.0" y="755.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="start" font-weight="normal">16/2. Swap leads to reverse</text>
+<text x="1068.0" y="741.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="bold">OPTIONAL metered auger motor, 12 V</text>
+<text x="1068.0" y="755.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="start" font-weight="normal">16/2. Unused with the gravity feed bin</text>
 <rect x="580.0" y="774.0" width="150.0" height="66.0" rx="3" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
 <text x="586.0" y="787.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="bold">J6 SSR_OUT</text>
 <circle cx="730.0" cy="794.0" r="3" fill="#ffffff" stroke="#1f2933" stroke-width="1.5"/>
@@ -131,8 +131,8 @@
 <text x="724.0" y="840.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="end" font-weight="normal">HEAT_SSR-</text>
 <line x1="733.0" y1="836.0" x2="1060.0" y2="836.0" stroke="#2f6fbd" stroke-width="2"/>
 <rect x="1060.0" y="772.0" width="420.0" height="70.0" rx="4" fill="#f5f7fa" stroke="#1f2933" stroke-width="1"/>
-<text x="1068.0" y="787.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="bold">SSR1 (+/-) lights, SSR2 (+/-) de-icer</text>
-<text x="1068.0" y="801.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="start" font-weight="normal">18/4. + to SSR "+" inputs</text>
+<text x="1068.0" y="787.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="bold">Relay module 1 A1/A2 (lights), relay 2 (de-icer)</text>
+<text x="1068.0" y="801.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="start" font-weight="normal">18/4. +12V to A1, switched pin to A2</text>
 <rect x="580.0" y="848.0" width="150.0" height="52.0" rx="3" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
 <text x="586.0" y="861.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="bold">J7 WATER_LVL</text>
 <circle cx="730.0" cy="868.0" r="3" fill="#ffffff" stroke="#1f2933" stroke-width="1.5"/>
@@ -145,7 +145,7 @@
 <text x="724.0" y="900.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="end" font-weight="normal">GND</text>
 <line x1="733.0" y1="896.0" x2="1060.0" y2="896.0" stroke="#1f2933" stroke-width="1.5"/>
 <rect x="1060.0" y="846.0" width="420.0" height="56.0" rx="4" fill="#f5f7fa" stroke="#1f2933" stroke-width="1"/>
-<text x="1068.0" y="861.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="bold">Float switches (low, high) in reservoir</text>
+<text x="1068.0" y="861.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="bold">Float switches (low, high) in the drum</text>
 <text x="1068.0" y="875.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="start" font-weight="normal">18/5 sprinkler wire, common = GND</text>
 <rect x="580.0" y="908.0" width="150.0" height="52.0" rx="3" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
 <text x="586.0" y="921.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="bold">J8 ONEWIRE</text>
@@ -159,7 +159,7 @@
 <text x="724.0" y="960.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="end" font-weight="normal">GND</text>
 <line x1="733.0" y1="956.0" x2="1060.0" y2="956.0" stroke="#1f2933" stroke-width="1.5"/>
 <rect x="1060.0" y="906.0" width="420.0" height="56.0" rx="4" fill="#f5f7fa" stroke="#1f2933" stroke-width="1"/>
-<text x="1068.0" y="921.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="bold">DS18B20 waterproof probe (reservoir)</text>
+<text x="1068.0" y="921.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="bold">DS18B20 waterproof probe (drum)</text>
 <text x="1068.0" y="935.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="start" font-weight="normal">Red 3V3, yellow DATA, black GND</text>
 <rect x="580.0" y="968.0" width="150.0" height="66.0" rx="3" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
 <text x="586.0" y="981.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="bold">J9 I2C</text>
@@ -207,7 +207,7 @@
 <text x="724.0" y="1168.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="end" font-weight="normal">GND</text>
 <line x1="733.0" y1="1164.0" x2="1060.0" y2="1164.0" stroke="#1f2933" stroke-width="1.5"/>
 <rect x="1060.0" y="1100.0" width="420.0" height="70.0" rx="4" fill="#f5f7fa" stroke="#1f2933" stroke-width="1"/>
-<text x="1068.0" y="1115.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="bold">JSN-SR04T ultrasonic (feed hopper lid)</text>
+<text x="1068.0" y="1115.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="bold">JSN-SR04T ultrasonic (feed bin lid)</text>
 <text x="1068.0" y="1129.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="start" font-weight="normal">Cat5e / 22/4</text>
 <rect x="580.0" y="1176.0" width="150.0" height="66.0" rx="3" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
 <text x="586.0" y="1189.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="bold">J12 PANEL</text>
@@ -279,7 +279,7 @@
 <line x1="20.0" y1="414.0" x2="50.0" y2="414.0" stroke="#2f6fbd" stroke-width="3"/>
 <text x="58.0" y="418.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="normal">Signal / control</text>
 <line x1="20.0" y1="432.0" x2="50.0" y2="432.0" stroke="#2f6fbd" stroke-width="3" stroke-dasharray="6,3"/>
-<text x="58.0" y="436.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="normal">SSR control (12 V)</text>
+<text x="58.0" y="436.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2933" text-anchor="start" font-weight="normal">Relay/SSR control (12 V)</text>
 <rect x="20.0" y="480.0" width="290.0" height="160.0" rx="6" fill="#f5f7fa" stroke="#1f2933" stroke-width="1.5"/>
 <text x="28.0" y="498.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f2933" text-anchor="start" font-weight="bold">Rules</text>
 <text x="28.0" y="516.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">Mains and 12 V in SEPARATE boxes</text>

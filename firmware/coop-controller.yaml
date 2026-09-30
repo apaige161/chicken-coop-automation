@@ -13,12 +13,12 @@ substitutions:
   latitude: "40.0"
   longitude: "-83.0"
   timezone: "America/New_York"
-  # --- Feeder schedule (24 h clock, local time) ---
+  # --- Optional metered-auger schedule (24 h clock, local time) ---
   feed_hour_am: "7"
   feed_hour_pm: "15"
-  # --- Feed hopper geometry for the ultrasonic level sensor (metres) ---
-  hopper_empty_distance: "0.80"   # sensor-to-bottom distance when hopper is empty
-  hopper_full_distance: "0.20"    # sensor-to-feed distance when hopper is full
+  # --- Feed bin geometry for the ultrasonic level sensor in the bin lid (metres) ---
+  hopper_empty_distance: "0.74"   # lid sensor to the sloped floor at the bin centre
+  hopper_full_distance: "0.12"    # lid sensor to the feed surface when the bin is full
   # --- Voltage divider on VIN_SENSE: (100k + 22k) / 22k ---
   vin_divider_ratio: "5.545"
 

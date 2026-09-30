@@ -7,7 +7,7 @@ All parts are parametric **OpenSCAD** sources. Ready-to-print STLs are in `stl/`
 
 | STL | Qty | Source | What it's for | Material |
 |---|---|---|---|---|
-| `feeder_funnel_adapter` | 1 | `feeder_funnel_adapter.scad` | Hopper floor → 2" PVC auger tube funnel (170 mm flange) | PETG |
+| `feeder_funnel_adapter` | 0–1 | `feeder_funnel_adapter.scad` | **Only for the optional metered auger:** hopper floor → 2" PVC auger tube funnel. Not needed with the default gravity feed bin | PETG |
 | `camera_case`, `camera_lid`, `camera_bracket` | 1 each | `camera_mount.scad` | ESP32-CAM hood, lid and tilting wall bracket (optional camera) | ASA / PETG |
 | `pir_housing` | 1 | `pir_mount.scad` | HC-SR501 PIR housing, tilted 30° down over the roosts | PETG |
 | `ble_case_base`, `ble_case_lid` | 1 per sensor | `ble_sensor_case.scad` | Vented, peck-proof case for a LYWSD03MMC BLE thermometer | PETG |
@@ -17,7 +17,7 @@ All parts are parametric **OpenSCAD** sources. Ready-to-print STLs are in `stl/`
 | `shield_spacer_x12` | 12 | 〃 | 12 mm spacers on 3× M3 rods | Any |
 | `reed_switch_bracket_x2` | 2 | `reed_switch_bracket.scad` | Door-frame reed switch mounts with 12 mm slot adjustment | PETG |
 | `reed_magnet_holder_x2` | 2 | 〃 | Matching magnet holders on the door leaf | PETG |
-| `ultrasonic_lid_mount` | 1 | `ultrasonic_lid_mount.scad` | JSN-SR04T probe gland + clamp ring for the hopper lid (32 mm hole) | PETG |
+| `ultrasonic_lid_mount` | 1 | `ultrasonic_lid_mount.scad` | JSN-SR04T probe gland + clamp ring for the feed-bin lid in the service station (32 mm hole) | PETG |
 | `controller_backplate` | 1 | `controller_backplate.scad` | Mounts the 170×105 mm controller PCB in an IP65 box (200×130 mm plate) | PETG |
 
 ## Material and settings
@@ -43,5 +43,5 @@ No printer? Upload the STLs to any of these:
 | **PCBWay 3D printing** | Also combine with the PCB order |
 | **Local library / makerspace** | Often free or at cost |
 
-Rough cost for the full set in PETG through a service: **$35–70**. The feeder funnel and
-back-plate account for most of it.
+Rough cost for the default set (no funnel) in PETG through a service: **$30–55**. The
+back-plate accounts for most of it.

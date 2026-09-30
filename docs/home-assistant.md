@@ -12,7 +12,7 @@ safety logic runs on the ESP32.
    details. Generate the two API keys with the one-liner in the file.
 3. Edit the `substitutions:` at the top of `firmware/coop-controller.yaml`: **latitude,
    longitude, timezone** (these drive the sunrise/sunset door and lights), the feeding
-   hours, and the hopper depth.
+   hours (only used with the optional auger), and the feed-bin depth for the level sensor.
 4. The first flash goes over USB: `esphome run firmware/coop-controller.yaml`. After that,
    updates go over WiFi (OTA, encrypted with the API key).
 5. **Windows users:** if compiling fails with `c++config.h` / path-length errors, set
@@ -38,7 +38,8 @@ Go to Settings → Devices & services. The **ESPHome: Coop** device should appea
 | `switch.coop_water_auto_fill`, `button.coop_water_fill_now`, `button.coop_water_fill_lockout_reset` | Water fill control |
 | `number.coop_water_max_fill_time` | Fill timeout before lockout (default 10 min) |
 | `switch.coop_water_de_icer`, `switch.coop_de_icer_auto`, `number.coop_de_icer_on_below` / `…_off_above` | Freeze protection (3 °C on / 6 °C off) |
-| `switch.coop_feeder_auto_schedule`, `button.coop_dispense_feed_now`, `number.coop_feeder_run_time` | Auger feeding (07:00 and 15:00 by default) |
+| `sensor.coop_feed_level`, `binary_sensor.coop_feed_low` | Level of the exterior gravity feed bin (ultrasonic in the lid) |
+| `switch.coop_feeder_auto_schedule`, `button.coop_dispense_feed_now`, `number.coop_feeder_run_time` | **Optional metered auger only** (off by default). Twice daily at 07:00/15:00 when enabled |
 | `switch.coop_coop_light`, `switch.coop_light_auto_winter_supplement`, `number.coop_target_day_length` | Morning light supplement up to 14 h of daylight |
 | `switch.coop_exhaust_fan`, `switch.coop_fan_auto`, `number.coop_fan_on_above` | Ventilation fan |
 | `sensor.coop_coop_temperature` / `_humidity` / `_pressure`, `sensor.coop_outdoor_light`, `sensor.coop_water_temperature`, `sensor.coop_feed_level` | Telemetry |

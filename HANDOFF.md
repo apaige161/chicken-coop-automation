@@ -12,6 +12,9 @@ handoff are all implemented and verified. See `README.md` for the build order an
 - Construction plan, cut list, wiring/plumbing/run docs, 5 generated diagrams
 - Priced parts list (2026 estimates), Home Assistant docs/automations/dashboard
 - `tools/check_consistency.py` + GitHub Actions CI
+- v1.1: feed and water serviced from OUTSIDE via an exterior service station (gravity feed bin +
+  drum), 6 OpenSCAD renders (`construction/renders/`), cost-saving measures applied
+  (`docs/cost-savings.md`, about -$950 net). Repo made public.
 
 ## Decisions that stand (the user can redirect)
 - ESPHome instead of raw Arduino/ESP-IDF, KiCad instead of Eagle.

@@ -34,10 +34,16 @@
 <polyline points="870.0,257.6 1050.0,189.6 1230.0,257.6" fill="none" stroke="#1f2933" stroke-width="5"/>
 <rect x="1036.0" y="183.6" width="28.0" height="8.0" rx="0" fill="#9aa5b1" stroke="#1f2933" stroke-width="1"/>
 <text x="1050.0" y="175.6" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="middle" font-weight="normal">ridge vent</text>
-<rect x="1086.0" y="290.0" width="90.0" height="200.0" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.5"/>
-<text x="1131.0" y="400.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="middle" font-weight="normal">36"x80"</text>
-<rect x="855.0" y="382.0" width="45.0" height="66.0" rx="0" fill="#fff3d6" stroke="#8d6e4a" stroke-width="2"/>
-<text x="852.0" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="end" font-weight="normal">nest bay</text>
+<rect x="924.0" y="290.0" width="90.0" height="200.0" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.5"/>
+<text x="969.0" y="400.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="middle" font-weight="normal">36"x80"</text>
+<rect x="1035.0" y="310.0" width="150.0" height="210.0" rx="0" fill="#e9dcc4" stroke="#8d6e4a" stroke-width="2"/>
+<polygon points="1029.0,306.0 1191.0,306.0 1191.0,298.0 1029.0,298.0" fill="#9aa5b1" stroke="#1f2933" stroke-width="1"/>
+<line x1="1110.0" y1="314.0" x2="1110.0" y2="490.0" stroke="#8d6e4a" stroke-width="1.5"/>
+<text x="1110.0" y="376.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#1f2933" text-anchor="middle" font-weight="bold">FEED + WATER</text>
+<text x="1110.0" y="389.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="middle" font-weight="normal">service station</text>
+<text x="1110.0" y="402.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#616e7c" text-anchor="middle" font-weight="normal">(2 doors, fill from here)</text>
+<rect x="1200.0" y="382.0" width="45.0" height="66.0" rx="0" fill="#fff3d6" stroke="#8d6e4a" stroke-width="2"/>
+<text x="1248.0" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="start" font-weight="normal">nest bay</text>
 <rect x="1026.0" y="220.6" width="48.0" height="24.0" rx="0" fill="#cfe8ff" stroke="#1f2933" stroke-width="1.5"/>
 <text x="1080.0" y="274.6" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#616e7c" text-anchor="start" font-weight="normal">gable vent + 12 V fan (above)</text>
 <line x1="900.0" y1="550.0" x2="1200.0" y2="550.0" stroke="#616e7c" stroke-width="1"/>
@@ -52,7 +58,7 @@
 <line x1="835.0" y1="490.0" x2="845.0" y2="490.0" stroke="#616e7c" stroke-width="1"/>
 <line x1="835.0" y1="520.0" x2="845.0" y2="520.0" stroke="#616e7c" stroke-width="1"/>
 <text x="834.0" y="505.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#616e7c" text-anchor="middle" font-weight="normal" transform="rotate(-90 834 505.0)">~12"</text>
-<text x="1050.0" y="153.6" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#1f2933" text-anchor="middle" font-weight="bold">EAST (END) ELEVATION</text>
+<text x="1050.0" y="153.6" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#1f2933" text-anchor="middle" font-weight="bold">EAST (END) ELEVATION (south on the left)</text>
 <text x="60.0" y="580.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#616e7c" text-anchor="start" font-weight="normal">Framing: 4x6 PT skids on 4" compacted gravel; 2x6 PT floor joists 16" o.c.; 2x4 studs 16" o.c.; 2x6 rafters 24" o.c. with collar ties; 2x4 purlins 24" o.c.; 29 ga ribbed steel roofing.</text>
 <text x="60.0" y="598.0" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#c0392b" text-anchor="start" font-weight="normal">Check rafter size/spacing against your local ground snow load before building (see coop-build-plan.md).</text>
 </svg>

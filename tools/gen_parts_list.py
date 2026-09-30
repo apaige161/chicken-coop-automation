@@ -15,7 +15,7 @@ OUT = os.path.join(ROOT, 'docs', 'parts-list.md')
 TIERS = OrderedDict([
     ('base', 'Tier 1: coop, run, low-tech equipment and power to the coop'),
     ('auto', 'Tier 2: automation (controller, door, water, feed, sensors)'),
-    ('opt', 'Optional add-ons (camera, BLE sensors, battery backup)'),
+    ('opt', 'Optional add-ons (camera, BLE sensors, battery backup, metered auger)'),
 ])
 
 

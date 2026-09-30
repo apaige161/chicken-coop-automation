@@ -8,20 +8,25 @@
 > rafters or 16" spacing. All 120 V work is covered separately in `wiring.md` and needs a
 > licensed electrician.
 
+![exterior render](renders/coop-exterior.png)
+
 ![floor plan](diagrams/coop-floor-plan.svg)
 ![elevations](diagrams/coop-elevations.svg)
+
+More pictures are in [`renders/`](renders/): an interior cutaway, the open service station and the open nest bay.
 
 ## 1. Design summary
 
 | Item | Spec |
 |---|---|
-| Footprint | 10 ft × 20 ft outside (≈ 188 sq ft usable inside, 4 sq ft/bird) plus an exterior nest bay |
-| Foundation | 3 × 4×6 PT skids on a 12 × 22 ft, 4" compacted-gravel pad. Floor ≈ 12" above grade |
-| Floor | 2×6 PT joists 16" o.c., ¾" PT plywood, sheet vinyl, 8–12" deep litter |
+| Footprint | 10 ft × 20 ft outside (≈ 188 sq ft usable inside, 4 sq ft/bird) plus an exterior nest bay and an exterior feed/water service station |
+| Foundation | 3 × 4×6 PT skids on compacted gravel strips (a full pad is optional). Floor ≈ 12" above grade |
+| Floor | 2×6 PT joists 16" o.c., ¾" PT plywood, 2 coats of porch & floor enamel, 8–12" deep litter |
 | Walls | 2×4 studs 16" o.c. (92⅝" precuts, 8'-1" walls), T1-11 siding |
 | Roof | 4/12 gable, 2×6 rafters 24" o.c. + 2×6 rafter ties, 2×4 purlins, 29 ga ribbed steel, vented ridge, 12" overhangs |
 | Ventilation | ≥ 20 sq ft: open soffits both eaves (screened), ridge vent, gable vents, 4 windows |
-| Openings | 36" people door (east), 12 × 16" pop door (south), 4 × 24 × 36" windows, 12-box nest bay (north) |
+| Openings | 36" people door (east), 12 × 16" pop door (south), 4 × 24 × 36" windows, 12-box nest bay (north), feed slot + water pipe through the east wall |
+| Feed & water | **Filled from outside.** A ~350 lb gravity feed bin and a 30 gal drum sit in a roofed, lockable station on the east wall. Feed flows through a wall slot into an indoor trough, and water is piped through the wall to the nipple line (§7) |
 | Roosts | 5 × 9 ft 2×4 (wide face up), 36–40" high, 13" apart, over a 24"-high poop board |
 | Predator proofing | ½" 19-ga hardware cloth on **every** opening and skirting the raised floor, a 24" buried apron, 2-step latches |
 
@@ -30,8 +35,12 @@ trees to the west/south-west is ideal: summer shade, winter sun.
 
 ## 2. Build sequence
 
-1. **Site and pad.** Strip the sod on a 12 × 22 ft area. Lay landscape fabric, then 4"
-   of ¾" crushed stone in two compacted lifts. Level within ¼" across.
+1. **Site and gravel strips.** Strip the sod on a 12 × 22 ft area (plus 3 × 6 ft for the
+   service station). Dig three 12"-wide, 4"-deep trenches under the skid lines, line them
+   with landscape fabric, and fill with ¾" crushed stone in compacted lifts. Level the
+   strips to within ¼". This uses ~1.5 yd of stone instead of 3.5 yd for a full pad. The
+   hardware-cloth skirt and apron keep diggers out, so a full pad isn't needed; add one if
+   your site is wet.
 2. **Skids.** Lay three 4×6×20 PT (ground-contact) skids, 20 ft long, at 0, 4'-9" and
    9'-6" (outer faces flush with the floor edges). Level and square them (diagonals equal).
 3. **Floor frame.** Two 2×6×20 PT rim joists, with 2×6 PT joists (9'-9") at 16" o.c.
@@ -49,6 +58,8 @@ trees to the west/south-west is ideal: summer shade, winter sun.
    | Windows (3 south, 1 west) | 25" × 37", sill at 36" | 2 × 2×8 |
    | Pop door (south, 4 ft from SE corner) | 13" × 17", sill 8" above floor | flat 2×4 |
    | Nest-bay opening (north) | 157" × 14" at 20" above floor | 2 × 2×8, one post at mid-span |
+   | Feed slot (east, 4'-9" from the NE corner) | 18" × 5", bottom 10" above the floor | flat 2×4 (between studs) |
+   | Water pipe (east, 1'-9" from the NE corner) | 1¼" hole, 14" above the floor | none |
 7. **Roof.** Ridge board: 2×8, 22 ft (two 12 ft pieces spliced over a rafter pair).
    Common rafters: 2×6, cut from 8 ft stock. Run 5 ft + 12" overhang, birdsmouth on the
    top plate, 4/12 pitch (18.4°), length about 6'-4" along the top edge. Spacing is
@@ -67,20 +78,23 @@ trees to the west/south-west is ideal: summer shade, winter sun.
     - *People door:* build a Z-braced door from T1-11 on a 2×4 frame, hung on 3 × 8" T-hinges,
       with a keyed hasp outside and a barrel bolt inside. (A prehung steel door is fine too.)
     - *Windows:* ½" hardware cloth fixed with 1×2 battens and screws (not staples). Add
-      hinged plywood storm shutters, or slide-in twin-wall polycarbonate panels for winter.
+      top-hinged storm shutters made from the T1-11 window cut-outs, propped open in
+      summer and closed on the windward side in winter. No extra material to buy.
     - *Pop door:* ½" HDPE (cutting-board stock) or exterior plywood, 14" × 19", running in
       two 24" aluminium U-channels. The actuator mounts above on a 2×6 header block inside
       (see §6).
 11. **Screen everything.** Put ½" hardware cloth over the soffit gaps, gable vents and any
     gap > ½". Use 1" fender washers and screws every 4–6", since raccoons pull staples.
-12. **Nest bay** (§4), **roosts and poop board** (§5).
+12. **Nest bay** (§4), **roosts and poop board** (§5), **service station** (§7).
 13. **Paint.** Prime and paint all exterior wood, light colour for summer heat. Use
     exterior latex inside the nest bay and on the poop board for easy cleaning.
 14. **Apron.** Dig a trench around the coop perimeter not covered by the run, 6" deep.
     Lay 24" of hardware cloth flat outward from the skirt, pinned with landscape staples,
     then back-fill. (The run has its own apron; see `run-and-fencing.md`.)
-15. **Floor finish.** Lay sheet vinyl over the plywood with 6" turned up the walls and
-    the seams caulked. Then add 8–12" of pine shavings (deep litter).
+15. **Floor finish.** Once the PT plywood is dry (a few weeks, or when water beads rather
+    than soaks in), roll on two coats of porch & floor enamel, carried 6" up the walls,
+    and caulk the floor-to-wall joint. Then add 8–12" of pine shavings (deep litter).
+    This costs about $125 less than sheet vinyl and is just as easy to scrape clean.
 16. **Services.** Electrical per `wiring.md`, water per `plumbing.md`, then the automation
     in the order given in the top-level `README.md`.
 
@@ -103,8 +117,12 @@ trees to the west/south-west is ideal: summer shade, winter sun.
 | Roosts | 2×4 | 5 | 9' | Sand smooth, round the edges |
 | Roost/poop-board frame | 2×4 | 6 | 10' | Ledger + legs + board frame |
 | Ramp | 2×10 | 1 | 6' | Cleats from 1×2 every 6" |
+| Service station frame | 2×4 | 10 | 8' | Sill, corner posts, door frames, lid/roof rafters |
+| Feed bin | ¾" ext. plywood | 2 sheets | | Sides, back, sloped floor, lid (§7) |
 
 ## 4. Nest bay (12 boxes, exterior)
+
+![nest bay, lid open](renders/nest-bay-open.png)
 
 - The bay is 13'-6" long × 14" deep × 14" high (inside) and cantilevers off the north wall,
   sitting on the 2×8 header / sill of the 157" opening plus 3 triangular 2×4 brackets
@@ -120,6 +138,8 @@ trees to the west/south-west is ideal: summer shade, winter sun.
   reports nest temperature in winter.
 
 ## 5. Roosts and poop board
+
+![interior cutaway](renders/interior-cutaway.png)
 
 - Five 2×4 roosts, **wide face up** (so the birds' toes stay covered in winter), each 9'
   long spanning the full interior width at the west end. They sit on 2×4 ledgers screwed
@@ -151,7 +171,44 @@ trees to the west/south-west is ideal: summer shade, winter sun.
   own. Once, after installing, check at dusk with a headcount. HA also alerts you if the
   door is still open 30 minutes after that.
 
-## 7. Ventilation and insulation
+## 7. Exterior feed & water service station
+
+![service station, doors open](renders/service-station-open.png)
+
+Feed and water are both refilled **from outside the coop**, so there's no walking through
+litter with feed bags and buckets, nothing to spill inside, and no need to open the coop
+at all on a normal day.
+
+- **Station:** a lean-to cabinet on the north end of the east wall, 5 ft wide × 30" deep ×
+  6 ft tall. It stands on 4 concrete blocks, framed in 2×4 and sided with T1-11 to match the
+  coop, with a steel lean-to roof. There are two side-hinged doors on the east face with
+  **raccoon-proof latches** (spring latch + carabiner), or a padlock. Put 1" rigid foam on
+  the drum side and roof. Screen any gaps with ½" hardware cloth to keep out rodents and
+  wild birds.
+- **Feed bin (left, ~350 lb / 7 bags ≈ 3–4 weeks):** a ¾" plywood box 24" wide × 26" deep ×
+  42" tall with a hinged lid. Its **floor slopes at 45°** down toward the coop wall and ends
+  at an 18" × 5" slot through the wall, 10" above the coop floor. An aluminium **slide gate**
+  on the outside of the slot sets the flow and shuts it off for cleaning.
+  - Inside, a 48" galvanized **trough on a 10" stand** sits under the slot. Feed runs down as
+    the hens eat it, which is the classic gravity-feeder principle, just at a larger scale.
+    A wire grill across the trough cuts billing waste.
+  - Fill it to about 3 weeks' worth at a time so the feed stays fresh. In humid climates,
+    seal the bin seams with caulk and gasket the lid (closed-cell foam tape).
+  - The JSN-SR04T ultrasonic sensor mounts in the bin lid
+    (`3d-printing/ultrasonic_lid_mount.scad`), so HA shows the feed level and alerts you
+    when it's low.
+- **Water (right):** the 30 gal drum sits on an 18" block stand. The supply hose, vacuum
+  breaker, regulator, filter and 12 V solenoid all live in the station, so no pressurised
+  water ever enters the coop. The outlet runs as ¾" PVC **through the wall at 14"** to the
+  nipple line inside, and the overflow drains outside, away from the station. Fill it by hose
+  through the lid (Tier 1), or let the floats and solenoid do it (Tier 2). See `plumbing.md`.
+- **Winter:** the insulated drum side plus the de-icer (relay 2) keep the drum liquid. Put
+  self-regulating heat cable under foam on the short exposed pipe run and the indoor nipple
+  line. In hard-freeze climates, a heated nipple bucket inside is the fallback.
+
+![interior feed and water](renders/interior-feed-water.png)
+
+## 8. Ventilation and insulation
 
 - **Ventilate, don't seal.** Ammonia and moisture are a bigger winter risk than cold. The
   open eave soffits (2 × 20 ft × ~4" net) plus the ridge vent give continuous high-level
@@ -163,27 +220,27 @@ trees to the west/south-west is ideal: summer shade, winter sun.
   In very cold climates, add 1" rigid foam under the roof steel, over the purlins, to stop
   condensation dripping on the roosts.
 
-## 8. Interior layout (see floor plan)
+## 9. Interior layout (see floor plan)
 
 | Zone | Contents |
 |---|---|
 | West 6 ft | Roosts and poop board (sleeping) |
 | North wall | 12 nest-box openings at 20" |
-| Centre | 2 hanging feeders, or the auger-fed trough under the hopper outlet |
-| South-centre | 30 gal water drum on a 24" block stand, nipple/cup line at 12–14" |
-| South-west of centre | Feed hopper (32 gal can) with auger to the trough |
-| East wall (inside the door) | Mains box (5 ft up), controller box beside it, cables in PVC conduit |
+| East wall, north end | Feed trough under the wall slot (fed from the exterior bin). Mains box and controller box above it at 5 ft, with short cable runs through the wall to the station sensors |
+| Centre | Nipple/cup line at 12–14", piped through the east wall from the exterior drum |
+| East wall, south end | People door |
 | Ceiling | 2 LED jelly-jar lights, PIR over the roosts, BME280 radiation shield on the north wall |
 
 Keep feed and water **out from under the roosts**, and give at least 3 ft of clear floor
 in front of the nest boxes.
 
-## 9. Maintenance calendar
+## 10. Maintenance calendar
 
 | When | Task |
 |---|---|
 | Daily | Collect eggs, glance at the HA dashboard, scrape the poop board (or weekly with PDZ) |
-| Weekly | Top up the feed hopper, check water nipples, check the door runs smoothly |
+| Weekly | Check the feed level (HA) and water nipples. Check the door runs smoothly |
+| Every 3–4 weeks | Refill the feed bin from outside (about 7 bags). Brush out any caked feed at the slot |
 | Monthly | Stir or turn the deep litter, clean the nipple line filter, check latches and hardware cloth |
 | Spring/fall | Muck out the deep litter (compost it), inspect the roof and siding, check the apron, re-check the door reed positions |
-| Before winter | Drain the supply hose, test the de-icer / heated line, fit the window panels, check the SSRs and the GFCI test button |
+| Before winter | Drain the supply hose, test the de-icer / heat cable, close the windward shutters, check the station insulation and door seals, press the GFCI test button |

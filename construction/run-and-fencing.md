@@ -2,6 +2,8 @@
 
 ![site plan](diagrams/site-plan.svg)
 
+![overview](renders/coop-overview.png)
+
 The flock **free-ranges most of the day**. The run is for bad-weather days, for keeping
 the birds in while you're away, and for the first two weeks after moving in (to "home"
 them to the coop). The ranging area is protected by portable electric netting.
@@ -17,18 +19,19 @@ Attached to the south wall of the coop so the pop door opens straight into it.
 | Lower wall (0–36") | **½" 19-ga hardware cloth**, screwed with fender washers to the posts and rails. Rats, weasels and raccoon hands can't pass it |
 | Upper wall (36"–6'6") | 2 × 4" 14-ga welded wire (keeps out dogs, coyotes and foxes above ground level) |
 | Apron | 24" of hardware cloth laid flat **outward** at the base, pinned and buried 2–4" (or covered with pavers). Diggers hit the mesh at the fence line and give up |
-| Roof | Heavy knotted aviary netting (2" mesh) on 2×4 purlins at 4 ft o.c., plus a 10 ft deep steel-roofed section next to the coop for shade and rain. In snow country, take the netting down in winter or make the whole roof steel |
+| Roof | Heavy knotted aviary netting (2" mesh) on 2×4 purlins at 4 ft o.c., plus a **12 × 16 ft HDPE shade sail** over the half nearest the coop for summer shade. The coop itself is the rain shelter. In snow country, take the netting and sail down in winter (or, if budget allows, steel-roof that half: about $400 more) |
 | Gates | 36" walk-in gate (east side) with **two** latches, one a carabiner. Three 18 × 24" "range gates" (east, south and west sides), one into each paddock, as guillotine doors on U-channel |
-| Floor | Leave soil. Add 4" of wood chips or sand in wet areas. Keep a dust-bath corner (sand + wood ash) under the roofed section |
+| Floor | Leave soil. Add 4" of wood chips or sand in wet areas. Keep a dust-bath corner (sand + wood ash) under the shade sail |
 
 **Raccoons open simple latches.** Use spring-loaded gate latches plus a carabiner or snap,
 everywhere.
 
 ## 2. Free-range paddocks (electric poultry netting)
 
-- Use three paddocks around the run (A east, B south, C west), each fenced with one
-  **164 ft roll of 48" electric poultry netting**. That's about 0.1 acre per setting,
-  and about 0.3 acre in rotation for 50 birds.
+- Use three paddocks around the run (A east, B south, C west). **One 164 ft roll of 48"
+  electric poultry netting is moved between them.** That's about 0.1 acre per setting, and
+  about 0.3 acre in rotation for 50 birds. Moving a roll takes about 15 minutes. Buy a second
+  or third roll later only if you want paddocks standing ready (about $215 each).
 - Rotate every **2–4 weeks**, or sooner if the ground goes bare, so the grass recovers
   and parasites break their cycle.
 - Energizer: a **solar poultry netting energizer (≥ 0.25 J)** with a 3 ft ground rod,
@@ -59,9 +62,9 @@ everywhere.
 | ½" 19-ga hardware cloth, 24" × 100 ft | 2 (run apron + coop apron) |
 | 2 × 4" 14-ga welded wire, 48" × 100 ft | 1 |
 | Aviary netting, 25 × 25 ft (2" knotted) | 1 |
-| Steel roof panels (for the 10 ft roofed section) | 9 panels, 3 × 12 ft |
+| Shade sail, 12 × 16 ft HDPE + ties | 1 |
 | Walk gate kit + 2 latches, carabiners | 1 set |
-| Electric poultry netting, 48" × 164 ft | 3 (or 1 moved around) |
+| Electric poultry netting, 48" × 164 ft | 1 (moved between paddocks) |
 | Solar netting energizer + ground rod + tester | 1 |
 | Fender washers (1") + 1¼" exterior screws | 1,000 |
 | Gravel for post holes | 1 yd |

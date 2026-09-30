@@ -3,7 +3,7 @@
 This is a 2-layer, all through-hole carrier board for an **ESP32-DevKitC-32E**. It has 12 V
 input protection, a 5 V regulator, a 2-relay H-bridge for the pop-door actuator, five
 low-side MOSFET outputs, conditioned sensor inputs, and screw terminals for all field
-wiring. **It carries 12 V DC only.** The 120 V SSRs and PSU live in a separate mains
+wiring. **It carries 12 V DC only.** The 120 V relays/SSRs and PSU live in a separate mains
 enclosure (see `construction/wiring.md`).
 
 ![top](images/board-top.png)
@@ -84,7 +84,9 @@ electrolytics, fuse holder, regulator, relays and terminal blocks last.
 - **Low-side outputs:** IRLZ44N (or IRLB8721) logic-level FETs with 100 Ω gate and 100 kΩ
   pull-down resistors, so outputs stay OFF while the ESP32 boots. 1N5822 flyback diodes
   protect against the valve/motor/fan inductance. 2N7000 FETs drive the relay coils (1N4148
-  flyback) and the SSR inputs (about 10 mA).
+  flyback) and the J6 outputs for the mains-box relay-module coils (~20 mA; use modules with
+  a built-in suppression diode) or SSR inputs (~10 mA). J5 (FEEDER) is only used by the
+  optional metered auger.
 - **Inputs:** 10 kΩ pull-ups to 3.3 V plus a 100 nF cap on every long-wire input. The PIR
   has a 10 kΩ pull-down. The JSN-SR04T 5 V echo goes through a 1 k/2 k divider.
 - **VIN sense:** 100 k/22 k divider into GPIO36. The firmware multiplies by 5.545.

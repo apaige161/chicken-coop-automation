@@ -9,25 +9,25 @@
 
 | Tier | Total |
 |---|---:|
-| Tier 1: coop, run, low-tech equipment and power to the coop | **$10,326** |
-| Tier 2: automation (controller, door, water, feed, sensors) | **$864** |
-| Optional add-ons (camera, BLE sensors, battery backup) | **$144** |
-| **Tier 1 + Tier 2 (recommended build)** | **$11,190** |
-| Everything | $11,334 |
+| Tier 1: coop, run, low-tech equipment and power to the coop | **$9,592** |
+| Tier 2: automation (controller, door, water, feed, sensors) | **$645** |
+| Optional add-ons (camera, BLE sensors, battery backup, metered auger) | **$214** |
+| **Tier 1 + Tier 2 (recommended build)** | **$10,237** |
+| Everything | $10,451 |
 
-Where the money goes: floor, wall and roof framing, siding and steel are 42% of Tier 1, and the run plus electric-netting paddocks another 20%. The whole automation tier adds only 8% on top of Tier 1.
+Where the money goes: floor, wall and roof framing, siding and steel are 44% of Tier 1, and the run plus electric-netting paddocks another 13%. The whole automation tier adds only 7% on top of Tier 1.
 
 ## Tier 1: coop, run, low-tech equipment and power to the coop
 
-### Site & foundation: $452
+### Site & foundation: $342
 
 | Item | Spec | Qty | Unit | Total | Notes |
 |---|---|---:|---:|---:|---|
-| Crushed stone | 3/4 in. clean crushed stone (cu yd) | 3.5 | $55.00 | $192 | 12x22 ft pad x 4 in. + post holes; delivery often extra |
+| Crushed stone | 3/4 in. clean crushed stone (cu yd) | 1.5 | $55.00 | $82 | 3 x 12 in. gravel strips under the skids + service-station base (full pad optional) |
 | Landscape fabric | 4 ft x 100 ft woven | 1 | $35.00 | $35 |  |
 | Skids | 4x6x20 PT ground-contact | 3 | $75.00 | $225 |  |
 
-### Floor: $1,058
+### Floor: $933
 
 | Item | Spec | Qty | Unit | Total | Notes |
 |---|---|---:|---:|---:|---|
@@ -36,7 +36,7 @@ Where the money goes: floor, wall and roof framing, siding and steel are 42% of 
 | Joist hangers | 2x6 face-mount (Simpson LUS26 or eq.) | 28 | $1.60 | $45 |  |
 | Hurricane ties | H2.5A or eq. | 72 | $0.90 | $65 | joists-to-skids + rafters-to-plates |
 | Subfloor | 3/4 in. PT plywood 4x8 | 7 | $68.00 | $476 |  |
-| Sheet vinyl | 12 ft x 21 ft roll | 1 | $180.00 | $180 | wipe-clean floor under deep litter |
+| Floor paint | porch & floor enamel 1 gal (2 coats on the PT plywood) | 1 | $55.00 | $55 | replaces sheet vinyl |
 
 ### Walls: $1,993
 
@@ -72,13 +72,13 @@ Where the money goes: floor, wall and roof framing, siding and steel are 42% of 
 | Exterior primer + paint | gallons | 5 | $42.00 | $210 |  |
 | Caulk / sealant | tubes | 6 | $8.00 | $48 |  |
 
-### Doors & windows: $285
+### Doors & windows: $222
 
 | Item | Spec | Qty | Unit | Total | Notes |
 |---|---|---:|---:|---:|---|
 | People-door hardware | 3x 8 in. T-hinges + hasp + barrel bolt | 1 | $55.00 | $55 | door built from T1-11 offcuts |
 | Window battens | 1x2x8 | 12 | $4.00 | $48 |  |
-| Twin-wall polycarbonate | 4x8 sheet (winter window panels) | 1 | $95.00 | $95 |  |
+| Storm shutter hardware | hinges + hook-and-eye + prop sticks (shutters from T1-11 offcuts) | 4 | $8.00 | $32 | replaces polycarbonate panels |
 | Pop door leaf + tracks | 1/2 in. HDPE 14x19 + 2x aluminium U-channel 4 ft | 1 | $45.00 | $45 |  |
 | Manual pop-door rope kit | pulley + cleat + rope | 1 | $18.00 | $18 | Tier 1 door operation |
 | Ramp | 2x10x6 + 1x2 cleats | 1 | $24.00 | $24 |  |
@@ -104,19 +104,26 @@ Where the money goes: floor, wall and roof framing, siding and steel are 42% of 
 | Hardware cloth (aprons) | 1/2 in. 19 ga 24 in. x 100 ft | 2 | $95.00 | $190 | run + coop apron |
 | Fender washers + screws | 1 in. washers + 1-1/4 in. screws (bulk) | 1 | $45.00 | $45 |  |
 
-### Feed & water (Tier 1): $347
+### Feed & water (Tier 1): $754
 
 | Item | Spec | Qty | Unit | Total | Notes |
 |---|---|---:|---:|---:|---|
-| Hanging feeders | 30 lb galvanized hanging feeder | 2 | $42.00 | $84 |  |
-| Water drum | 30 gal food-grade drum | 1 | $45.00 | $45 |  |
+| Water drum | 30 gal food-grade drum | 1 | $20.00 | $20 | used food-grade drum (car wash / bakery / farm supply) |
 | Drinker line | 3/4 in. PVC + fittings + 10 horizontal nipples | 1 | $55.00 | $55 |  |
 | Drum bulkheads + ball valve | 3/4 in. and 1/2 in. bulkheads + valve | 1 | $32.00 | $32 |  |
 | Drum stand | concrete blocks | 6 | $3.00 | $18 |  |
 | Supply hose chain | vacuum breaker + Y-valve + 25 psi regulator + filter | 1 | $48.00 | $48 |  |
 | Drinking-water hose | 5/8 in. lead-free 75 ft | 1 | $65.00 | $65 |  |
+| Service station framing | 2x4x8 (station walls, doors, lid frame) | 10 | $4.80 | $48 | exterior feed + water cabinet on the east wall |
+| Service station siding + doors | T1-11 5/8 in. 4x9 | 2 | $72.00 | $144 |  |
+| Feed bin | 3/4 in. exterior plywood 4x8 (sloped-floor gravity bin ~350 lb) | 2 | $58.00 | $116 | fills from outside; feeds the indoor trough through the wall |
+| Indoor feed trough | 48 in. galvanized trough + anti-waste grill + slide gate | 1 | $48.00 | $48 | replaces hanging feeders |
+| Service station roof | 29 ga panel 3 ft x 8 ft + drip edge | 2 | $34.00 | $68 |  |
+| Drum-side insulation | 1 in. rigid foam 4x8 | 1 | $32.00 | $32 | freeze protection for the drum side |
+| Station hinges + latches | 4 T-hinges + 2 raccoon-proof latches + bin lid hinge | 1 | $48.00 | $48 |  |
+| Station base blocks | solid concrete blocks | 4 | $3.00 | $12 |  |
 
-### Run & fencing: $2,068
+### Run & fencing: $1,225
 
 | Item | Spec | Qty | Unit | Total | Notes |
 |---|---|---:|---:|---:|---|
@@ -125,9 +132,9 @@ Where the money goes: floor, wall and roof framing, siding and steel are 42% of 
 | Run roof purlins | 2x4x12 | 7 | $8.00 | $56 |  |
 | Welded wire | 2x4 in. 14 ga 48 in. x 100 ft | 1 | $120.00 | $120 |  |
 | Aviary netting | 25x25 ft knotted 2 in. | 1 | $85.00 | $85 |  |
-| Run roof panels | 29 ga 3 ft x 12 ft | 9 | $52.00 | $468 | roofed 10 ft section |
+| Shade sail | 12 x 16 ft HDPE shade sail + ties (half the run) | 1 | $55.00 | $55 | replaces a steel-roofed run section |
 | Walk gate kit + latches | gate hardware + 2 latches + carabiners | 1 | $70.00 | $70 |  |
-| Electric poultry netting | 48 in. x 164 ft | 3 | $215.00 | $645 | one per paddock (or buy 1 and move it) |
+| Electric poultry netting | 48 in. x 164 ft | 1 | $215.00 | $215 | move it between the 3 paddocks; add rolls later if wanted |
 | Solar netting energizer | >=0.25 J solar + ground rod + tester | 1 | $260.00 | $260 |  |
 
 ### Power to coop: $1,406
@@ -146,7 +153,7 @@ Where the money goes: floor, wall and roof framing, siding and steel are 42% of 
 
 ## Tier 2: automation (controller, door, water, feed, sensors)
 
-### Controller: $359
+### Controller: $285
 
 | Item | Spec | Qty | Unit | Total | Notes |
 |---|---|---:|---:|---:|---|
@@ -157,8 +164,7 @@ Where the money goes: floor, wall and roof framing, siding and steel are 42% of 
 | Cable glands | PG7/PG9 nylon assortment | 1 | $14.00 | $14 |  |
 | Panel button + LED | IP67 momentary push button + 5 mm LED bezel | 1 | $12.00 | $12 |  |
 | 12 V PSU | Mean Well HDR-100-12N DIN rail | 1 | $32.00 | $32 |  |
-| SSR (lights) | Crydom D2410 or eq. 10 A zero-cross | 1 | $48.00 | $48 | genuine only |
-| SSR (de-icer) | Crydom D2425 or eq. 25 A zero-cross | 1 | $58.00 | $58 | genuine only |
+| DIN relay modules | 12 VDC coil, 6 A contact, with LED + suppression diode (Finder 38.51 or eq.) | 2 | $16.00 | $32 | lights + de-icer; genuine SSRs (Crydom D24xx) are the ~$100 alternative |
 | 3D-printed parts | full set in PETG/ASA via print service | 1 | $55.00 | $55 | see 3d-printing/README.md |
 
 ### Door: $65
@@ -178,15 +184,11 @@ Where the money goes: floor, wall and roof framing, siding and steel are 42% of 
 | Overflow + inlet bulkheads | 3/4 in. overflow + 1/2 in. inlet + PVC | 1 | $24.00 | $24 |  |
 | Drinker-line heat cable | self-regulating 3 W/ft 12 ft + insulation | 1 | $55.00 | $55 | cold climates |
 
-### Feed: $157
+### Feed: $12
 
 | Item | Spec | Qty | Unit | Total | Notes |
 |---|---|---:|---:|---:|---|
-| Feed hopper | 32 gal metal can with lid | 1 | $45.00 | $45 |  |
-| Auger | 1-1/2 in. x 36 in. ship-auger bit in 2 in. PVC | 1 | $38.00 | $38 |  |
-| Auger motor | 12 V DC gear motor ~30 rpm high torque + coupler | 1 | $32.00 | $32 |  |
-| Feed trough | galvanized trough 36 in. | 1 | $30.00 | $30 |  |
-| Feed level sensor | JSN-SR04T waterproof ultrasonic | 1 | $12.00 | $12 |  |
+| Feed level sensor | JSN-SR04T waterproof ultrasonic | 1 | $12.00 | $12 | mounted in the feed-bin lid |
 
 ### Environment: $45
 
@@ -211,7 +213,7 @@ Where the money goes: floor, wall and roof framing, siding and steel are 42% of 
 | Cat5e | outdoor Cat5e 50 ft | 1 | $14.00 | $14 |  |
 | Ferrules + labels | ferrule kit + cable labels | 1 | $18.00 | $18 |  |
 
-## Optional add-ons (camera, BLE sensors, battery backup)
+## Optional add-ons (camera, BLE sensors, battery backup, metered auger)
 
 ### Camera: $82
 
@@ -233,3 +235,9 @@ Where the money goes: floor, wall and roof framing, siding and steel are 42% of 
 |---|---|---:|---:|---:|---|
 | SLA battery | 12 V 7 Ah | 1 | $24.00 | $24 |  |
 | Float charger + diode | 12 V float charger + 10 A Schottky OR-ing | 1 | $28.00 | $28 |  |
+
+### Metered auger (optional): $70
+
+| Item | Spec | Qty | Unit | Total | Notes |
+|---|---|---:|---:|---:|---|
+| Auger kit | 1-1/2 in. ship auger in 2 in. PVC + 12 V ~30 rpm gear motor + coupler (J5) | 1 | $70.00 | $70 | only if you want to ration feed; the gravity bin already feeds automatically |

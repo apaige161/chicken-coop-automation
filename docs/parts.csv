@@ -1,5 +1,5 @@
 tier,category,item,spec,qty,unit_price,notes
-base,Site & foundation,Crushed stone,3/4 in. clean crushed stone (cu yd),3.5,55,12x22 ft pad x 4 in. + post holes; delivery often extra
+base,Site & foundation,Crushed stone,3/4 in. clean crushed stone (cu yd),1.5,55,3 x 12 in. gravel strips under the skids + service-station base (full pad optional)
 base,Site & foundation,Landscape fabric,4 ft x 100 ft woven,1,35,
 base,Site & foundation,Skids,4x6x20 PT ground-contact,3,75,
 base,Floor,Rim joists,2x6x20 PT,2,34,
@@ -7,7 +7,7 @@ base,Floor,Floor joists,2x6x10 PT,16,14,16 in. o.c.
 base,Floor,Joist hangers,2x6 face-mount (Simpson LUS26 or eq.),28,1.6,
 base,Floor,Hurricane ties,H2.5A or eq.,72,0.9,joists-to-skids + rafters-to-plates
 base,Floor,Subfloor,3/4 in. PT plywood 4x8,7,68,
-base,Floor,Sheet vinyl,12 ft x 21 ft roll,1,180,wipe-clean floor under deep litter
+base,Floor,Floor paint,porch & floor enamel 1 gal (2 coats on the PT plywood),1,55,replaces sheet vinyl
 base,Walls,Studs,2x4x92-5/8 precut,90,4.5,
 base,Walls,Gable studs,2x4x8,6,4.8,
 base,Walls,Bottom plates,2x4x10 PT,7,8.5,
@@ -29,7 +29,7 @@ base,Fasteners & finish,Exterior primer + paint,gallons,5,42,
 base,Fasteners & finish,Caulk / sealant,tubes,6,8,
 base,Doors & windows,People-door hardware,3x 8 in. T-hinges + hasp + barrel bolt,1,55,door built from T1-11 offcuts
 base,Doors & windows,Window battens,1x2x8,12,4,
-base,Doors & windows,Twin-wall polycarbonate,4x8 sheet (winter window panels),1,95,
+base,Doors & windows,Storm shutter hardware,hinges + hook-and-eye + prop sticks (shutters from T1-11 offcuts),4,8,replaces polycarbonate panels
 base,Doors & windows,Pop door leaf + tracks,1/2 in. HDPE 14x19 + 2x aluminium U-channel 4 ft,1,45,
 base,Doors & windows,Manual pop-door rope kit,pulley + cleat + rope,1,18,Tier 1 door operation
 base,Doors & windows,Ramp,2x10x6 + 1x2 cleats,1,24,
@@ -44,21 +44,28 @@ base,Interior,PDZ,40 lb bag,1,16,
 base,Predator proofing,Hardware cloth (walls/vents/skirt),1/2 in. 19 ga 48 in. x 100 ft,1,210,coop openings + floor skirt + run lower wall
 base,Predator proofing,Hardware cloth (aprons),1/2 in. 19 ga 24 in. x 100 ft,2,95,run + coop apron
 base,Predator proofing,Fender washers + screws,1 in. washers + 1-1/4 in. screws (bulk),1,45,
-base,Feed & water (Tier 1),Hanging feeders,30 lb galvanized hanging feeder,2,42,
-base,Feed & water (Tier 1),Water drum,30 gal food-grade drum,1,45,
+base,Feed & water (Tier 1),Water drum,30 gal food-grade drum,1,20,used food-grade drum (car wash / bakery / farm supply)
 base,Feed & water (Tier 1),Drinker line,3/4 in. PVC + fittings + 10 horizontal nipples,1,55,
 base,Feed & water (Tier 1),Drum bulkheads + ball valve,3/4 in. and 1/2 in. bulkheads + valve,1,32,
 base,Feed & water (Tier 1),Drum stand,concrete blocks,6,3,
 base,Feed & water (Tier 1),Supply hose chain,vacuum breaker + Y-valve + 25 psi regulator + filter,1,48,
 base,Feed & water (Tier 1),Drinking-water hose,5/8 in. lead-free 75 ft,1,65,
+base,Feed & water (Tier 1),Service station framing,"2x4x8 (station walls, doors, lid frame)",10,4.8,exterior feed + water cabinet on the east wall
+base,Feed & water (Tier 1),Service station siding + doors,T1-11 5/8 in. 4x9,2,72,
+base,Feed & water (Tier 1),Feed bin,3/4 in. exterior plywood 4x8 (sloped-floor gravity bin ~350 lb),2,58,fills from outside; feeds the indoor trough through the wall
+base,Feed & water (Tier 1),Indoor feed trough,48 in. galvanized trough + anti-waste grill + slide gate,1,48,replaces hanging feeders
+base,Feed & water (Tier 1),Service station roof,29 ga panel 3 ft x 8 ft + drip edge,2,34,
+base,Feed & water (Tier 1),Drum-side insulation,1 in. rigid foam 4x8,1,32,freeze protection for the drum side
+base,Feed & water (Tier 1),Station hinges + latches,4 T-hinges + 2 raccoon-proof latches + bin lid hinge,1,48,
+base,Feed & water (Tier 1),Station base blocks,solid concrete blocks,4,3,
 base,Run & fencing,Run posts,4x4x10 PT,12,19,
 base,Run & fencing,Run rails,2x4x10 PT,16,8.5,
 base,Run & fencing,Run roof purlins,2x4x12,7,8,
 base,Run & fencing,Welded wire,2x4 in. 14 ga 48 in. x 100 ft,1,120,
 base,Run & fencing,Aviary netting,25x25 ft knotted 2 in.,1,85,
-base,Run & fencing,Run roof panels,29 ga 3 ft x 12 ft,9,52,roofed 10 ft section
+base,Run & fencing,Shade sail,12 x 16 ft HDPE shade sail + ties (half the run),1,55,replaces a steel-roofed run section
 base,Run & fencing,Walk gate kit + latches,gate hardware + 2 latches + carabiners,1,70,
-base,Run & fencing,Electric poultry netting,48 in. x 164 ft,3,215,one per paddock (or buy 1 and move it)
+base,Run & fencing,Electric poultry netting,48 in. x 164 ft,1,215,move it between the 3 paddocks; add rolls later if wanted
 base,Run & fencing,Solar netting energizer,>=0.25 J solar + ground rod + tester,1,260,
 base,Power to coop,Feeder cable,UF-B 12/2 w/G (per ft),75,1.6,length depends on site
 base,Power to coop,GFCI breaker,20 A GFCI breaker for your panel,1,55,
@@ -76,8 +83,7 @@ auto,Controller,Controller enclosure,IP65 ABS ~250x200x100,1,32,
 auto,Controller,Cable glands,PG7/PG9 nylon assortment,1,14,
 auto,Controller,Panel button + LED,IP67 momentary push button + 5 mm LED bezel,1,12,
 auto,Controller,12 V PSU,Mean Well HDR-100-12N DIN rail,1,32,
-auto,Controller,SSR (lights),Crydom D2410 or eq. 10 A zero-cross,1,48,genuine only
-auto,Controller,SSR (de-icer),Crydom D2425 or eq. 25 A zero-cross,1,58,genuine only
+auto,Controller,DIN relay modules,"12 VDC coil, 6 A contact, with LED + suppression diode (Finder 38.51 or eq.)",2,16,lights + de-icer; genuine SSRs (Crydom D24xx) are the ~$100 alternative
 auto,Controller,3D-printed parts,full set in PETG/ASA via print service,1,55,see 3d-printing/README.md
 auto,Door,Linear actuator,12 V 18 in. stroke >=225 N IP54+ with limit switches,1,55,
 auto,Door,Reed switches,surface-mount NO reed + magnet,2,5,
@@ -85,11 +91,7 @@ auto,Water,Solenoid valve,12 V NC 1/2 in. brass pilot-operated,1,28,
 auto,Water,Float switches,PP reed float level switch,2,7,
 auto,Water,Water temperature probe,DS18B20 waterproof 3 m,1,5,
 auto,Water,Overflow + inlet bulkheads,3/4 in. overflow + 1/2 in. inlet + PVC,1,24,
-auto,Feed,Feed hopper,32 gal metal can with lid,1,45,
-auto,Feed,Auger,1-1/2 in. x 36 in. ship-auger bit in 2 in. PVC,1,38,
-auto,Feed,Auger motor,12 V DC gear motor ~30 rpm high torque + coupler,1,32,
-auto,Feed,Feed trough,galvanized trough 36 in.,1,30,
-auto,Feed,Feed level sensor,JSN-SR04T waterproof ultrasonic,1,12,
+auto,Feed,Feed level sensor,JSN-SR04T waterproof ultrasonic,1,12,mounted in the feed-bin lid
 auto,Environment,Temp/humidity/pressure,BME280 breakout (3.3 V),1,9,
 auto,Environment,Light sensor,BH1750 breakout,1,4,
 auto,Environment,Exhaust fan,12 V 4 in. inline blower,1,32,
@@ -105,3 +107,4 @@ opt,BLE sensors,BLE thermometer,Xiaomi LYWSD03MMC (pvvx firmware),2,5,
 opt,Backup power,SLA battery,12 V 7 Ah,1,24,
 opt,Backup power,Float charger + diode,12 V float charger + 10 A Schottky OR-ing,1,28,
 opt,Camera,PoE/WiFi camera (alternative),RTSP/ONVIF outdoor camera with IR,1,60,better image than ESP32-CAM
+opt,Metered auger (optional),Auger kit,1-1/2 in. ship auger in 2 in. PVC + 12 V ~30 rpm gear motor + coupler (J5),1,70,only if you want to ration feed; the gravity bin already feeds automatically

@@ -20,7 +20,8 @@ if the controller, WiFi or Home Assistant fails:
 - The pop door runs from **local sunrise/sunset logic on the ESP32**. It does not need Home
   Assistant or internet, and a physical button on the enclosure works without WiFi.
 - A mechanical float valve or a manual fill still waters the birds if the solenoid fails.
-- The gravity feeders stay in place. The auger only tops them up.
+- Feed and water are gravity-fed from an **exterior service station**, so a failed controller
+  never stops the birds eating or drinking.
 
 ## 2. Site assumptions
 
@@ -43,6 +44,7 @@ if the controller, WiFi or Home Assistant fails:
 | Secure run (bad-weather days) | ~10 sq ft/bird | **20 ft × 25 ft = 500 sq ft**, roofed or netted |
 | Feed | ~0.25 lb/bird/day | **~12.5 lb/day** (~90 lb/week) |
 | Water | ~0.12–0.25 gal/bird/day | **6–12 gal/day**. A 30 gal reservoir lasts 2.5–5 days |
+| Feed + water access | Fill without entering the coop | **Exterior service station** on the east wall (5 ft × 30 in × 6 ft): ~350 lb gravity feed bin + 30 gal drum, both filled from outside |
 
 ## 4. System architecture
 
@@ -57,9 +59,9 @@ if the controller, WiFi or Home Assistant fails:
                                        |  ESP32-DevKitC-32E  |                   | (camera)    |
                                        |  on Coop Ctrl PCB   |                   +-------------+
                                        +--+--+--+--+--+--+--+
-     12 V DC loads:  door actuator (2-relay H-bridge), water solenoid, feed auger, 12 V fan
+     12 V DC loads:  door actuator (2-relay H-bridge), water solenoid, 12 V fan, (optional feed auger)
      Low-voltage in: door reeds, water floats, DS18B20, BME280, BH1750, PIR, ultrasonic, button
-     Opto/SSR out:   SSR1 -> 120 V coop lights,  SSR2 -> 120 V water de-icer  (mains stays OFF the PCB)
+     Relay/SSR out:  relay 1 -> 120 V coop lights, relay 2 -> 120 V de-icer (mains stays OFF the PCB)
 ```
 
 - **Firmware:** ESPHome (YAML). It is local-first and integrates natively with Home Assistant.
@@ -80,13 +82,14 @@ House panel --[20 A GFCI breaker]-- UF-B 12/2 (buried per code) --> Coop weather
      - 2-pole disconnect / 20 A breaker
      - GFCI receptacle (if not GFCI at panel)
      - Mean Well HDR-100-12N (12 V 7.5 A DIN PSU) ---> 12 V to controller box
-     - SSR1 (DC control 3-32 V, 120 V AC 10 A+) -> coop LED lights
-     - SSR2 (same)                             -> water de-icer / heated base (<= 500 W)
+     - Relay 1: DIN relay module, 12 VDC coil, 6 A (or SSR) -> coop LED lights
+     - Relay 2: same                                       -> water de-icer / heat cable (<= 500 W)
    Optional: 12 V 7 Ah SLA battery + float charger for door backup during power cuts
 ```
 
-- The **controller PCB carries 12 V DC and below only.** It switches the SSR inputs on the
-  low side. The SSRs, PSU and all 120 V conductors live in a separate mains enclosure.
+- The **controller PCB carries 12 V DC and below only.** It switches the relay coils (or SSR
+  inputs) on the low side. The relays, PSU and all 120 V conductors live in a separate
+  mains enclosure. Use relay modules with a built-in suppression diode.
 - 12 V input: 5 A fuse → reverse-polarity Schottky → TVS → loads. 5 V comes from an
   onboard switching regulator (7805-footprint module). The ESP32 dev board takes 5 V on
   its `5V` pin and makes 3.3 V itself.
@@ -107,14 +110,14 @@ internal pull-ups, so the PCB provides external 10 kΩ pull-ups.
 | 32 | DOOR_CLOSED_SW | I | J3 | Reed switch to GND, pulled up |
 | 33 | DOOR_OPEN_SW | I | J3 | Reed switch to GND, pulled up |
 | 27 | VALVE_DRV | O | J4 | Low-side MOSFET, 12 V NC solenoid valve |
-| 13 | FEEDER_DRV | O | J5 | Low-side MOSFET, 12 V auger gear motor |
+| 13 | FEEDER_DRV | O | J5 | Low-side MOSFET, optional 12 V metered-auger motor |
 | 14 | FAN_DRV | O | J14 | Low-side MOSFET, 12 V exhaust fan (may blip at boot; harmless) |
-| 16 | LIGHT_SSR | O | J6 | Low-side MOSFET → SSR1 input (120 V lights) |
-| 17 | HEAT_SSR | O | J6 | Low-side MOSFET → SSR2 input (120 V de-icer) |
+| 16 | LIGHT_SSR | O | J6 | Low-side MOSFET → relay 1 coil / SSR1 input (120 V lights) |
+| 17 | HEAT_SSR | O | J6 | Low-side MOSFET → relay 2 coil / SSR2 input (120 V de-icer) |
 | 34 | WATER_LOW | I | J7 | Float switch to GND, ext. 10 kΩ pull-up, RC filter |
 | 35 | WATER_HIGH | I | J7 | Float switch to GND, ext. 10 kΩ pull-up, RC filter |
 | 39 | PIR | I | J10 | HC-SR501 output (3.3 V logic), 10 kΩ pull-down |
-| 18 | US_TRIG | O | J11 | JSN-SR04T feed-level ultrasonic trigger |
+| 18 | US_TRIG | O | J11 | JSN-SR04T feed-bin level ultrasonic trigger |
 | 19 | US_ECHO | I | J11 | 5 V echo through a 1 kΩ/2 kΩ divider |
 | 23 | DOOR_BTN | I | J12 | Panel push button to GND (manual door toggle) |
 | 2 | STATUS_LED | O | J12 | Onboard LED + panel LED (330 Ω) |
@@ -138,10 +141,10 @@ primary end stop. The reed switches and a 30 s runtime timeout are secondary.
 | Subsystem | Tier 1 (low-tech) | Tier 2 (automated) |
 |---|---|---|
 | Pop door | Manual guillotine door + rope/pulley and latch | 12 V linear actuator, sunrise/sunset + lux logic on-device, reed confirmation, HA alert if not closed 30 min after sunset |
-| Feeder | 2× 50 lb treadle or 5-gal bucket port feeders | 32 gal hopper + 12 V auger tops up a trough on schedule, ultrasonic feed-level sensor |
-| Water | 30 gal drum + poultry nipples/cups, manual hose fill | 12 V NC solenoid from spigot, low/high float fill control with max-runtime and leak lockout |
-| Freeze protection | Swap in a heated bucket by hand | DS18B20 water temp → SSR2 de-icer control, HA freeze alerts |
-| Lighting | Manual switch | SSR1 adds morning light to keep 14 h of daylight in winter |
+| Feeder | ~350 lb gravity bin in the exterior station, feeding an indoor trough through a wall slot, filled from outside | Ultrasonic feed-level sensor + low-feed alert. Optional metered auger on J5 for rationing |
+| Water | 30 gal drum in the exterior station, piped through the wall to nipples/cups, hose-filled from outside | 12 V NC solenoid from spigot, low/high float fill control with max-runtime and leak lockout |
+| Freeze protection | Insulated station + heated bucket by hand | DS18B20 water temp → relay 2 de-icer/heat cable, HA freeze alerts |
+| Lighting | Manual switch | Relay 1 adds morning light to keep 14 h of daylight in winter |
 | Ventilation | Screened soffit/gable/window openings | 12 V exhaust fan on temperature/humidity thresholds |
 | Environment | Min/max thermometer | BME280 (T/RH/P), BH1750 lux, BLE thermometers, HA history |
 | Security | Hardware cloth, buried apron, latches | Door reeds, PIR night alerts, optional camera, electric poultry netting for range area |

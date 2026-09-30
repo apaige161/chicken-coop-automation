@@ -110,13 +110,13 @@ FIELD = {
     'J2': ('Linear actuator, 12 V, 18" stroke', '16/2 outdoor. Red = M+ (extend/open)'),
     'J3': ('Door reed switches (closed, open)', '18/5 sprinkler wire, common = GND'),
     'J4': ('Water solenoid valve, 12 V NC', '18/2. Polarity-free coil'),
-    'J5': ('Feed auger gear motor, 12 V', '16/2. Swap leads to reverse'),
-    'J6': ('SSR1 (+/-) lights, SSR2 (+/-) de-icer', '18/4. + to SSR "+" inputs'),
-    'J7': ('Float switches (low, high) in reservoir', '18/5 sprinkler wire, common = GND'),
-    'J8': ('DS18B20 waterproof probe (reservoir)', 'Red 3V3, yellow DATA, black GND'),
+    'J5': ('OPTIONAL metered auger motor, 12 V', '16/2. Unused with the gravity feed bin'),
+    'J6': ('Relay module 1 A1/A2 (lights), relay 2 (de-icer)', '18/4. +12V to A1, switched pin to A2'),
+    'J7': ('Float switches (low, high) in the drum', '18/5 sprinkler wire, common = GND'),
+    'J8': ('DS18B20 waterproof probe (drum)', 'Red 3V3, yellow DATA, black GND'),
     'J9': ('BME280 + BH1750 (I2C) in radiation shield', 'Cat5e, keep under 2 m'),
     'J10': ('HC-SR501 PIR (roost area)', '18/3'),
-    'J11': ('JSN-SR04T ultrasonic (feed hopper lid)', 'Cat5e / 22/4'),
+    'J11': ('JSN-SR04T ultrasonic (feed bin lid)', 'Cat5e / 22/4'),
     'J12': ('Panel: door push-button + status LED', 'On enclosure lid'),
     'J13': ('Expansion header (3V3, GND, 5V, SDA, SCL, IO5)', 'Future sensors'),
     'J14': ('12 V exhaust fan (gable)', '18/2'),
@@ -146,8 +146,8 @@ def wiring(pm):
     s.box(345, 115, 180, 60, 'Disconnect / 20 A', ['2-pole DIN breaker'], fill='#fff')
     s.box(545, 115, 190, 60, 'GFCI receptacle', ['service outlet (tools, brooder)'], fill='#fff')
     s.box(345, 190, 180, 70, 'PSU Mean Well', ['HDR-100-12N, 12 V 7.5 A', 'L / N / PE in, +V / -V out'], fill='#fff')
-    s.box(545, 190, 190, 70, 'SSR1 (lights)', ['DC ctrl 3-32 V, 120 VAC 10 A+', 'switches HOT only'], fill='#fff')
-    s.box(545, 275, 190, 70, 'SSR2 (de-icer)', ['DC ctrl 3-32 V, 120 VAC 25 A', 'switches HOT only'], fill='#fff')
+    s.box(545, 190, 190, 70, 'Relay 1 (lights)', ['DIN module, 12 VDC coil, 6 A', 'switches HOT only (or SSR)'], fill='#fff')
+    s.box(545, 275, 190, 70, 'Relay 2 (de-icer)', ['DIN module, 12 VDC coil, 6 A', 'switches HOT only (or SSR)'], fill='#fff')
     s.box(345, 275, 180, 70, 'Ground bar', ['all PE + metal parts bonded'], fill='#fff')
     s.text(345, 370, 'L = black (hot)  N = white  PE = green/bare', 11, color=MUTED)
     s.text(345, 388, 'Lights & de-icer on their own outdoor-rated cords/boxes', 11, color=MUTED)
@@ -156,7 +156,7 @@ def wiring(pm):
     s.line(735, 225, 770, 225, WIRE_AC, 3)
     s.line(770, 225, 770, 145, WIRE_AC, 3)
     s.line(770, 145, 800, 145, WIRE_AC, 3)
-    s.box(800, 280, 230, 70, 'Water de-icer / heated base', ['250-500 W, thermostatic', 'plugged into SSR2 outlet'])
+    s.box(800, 280, 230, 70, 'Water de-icer / heated base', ['250-500 W, thermostatic', 'plugged into the relay-2 outlet'])
     s.line(735, 310, 800, 310, WIRE_AC, 3)
 
     # 12 V to controller
@@ -166,7 +166,7 @@ def wiring(pm):
     # SSR control back from controller
     s.poly([(700, 460), (700, 425), (760, 425), (760, 330), (735, 330)], stroke=WIRE_SIG, sw=2, close=False, dash='6,3')
     s.poly([(680, 460), (680, 418), (752, 418), (752, 245), (735, 245)], stroke=WIRE_SIG, sw=2, close=False, dash='6,3')
-    s.text(560, 440, 'J6: SSR control (12 V)', 11, color=WIRE_SIG)
+    s.text(560, 440, 'J6: relay coils (12 V)', 11, color=WIRE_SIG)
 
     # optional battery
     s.box(20, 205, 290, 90, 'Optional backup (Tier 2+)', ['12 V 7 Ah SLA + float charger', 'diode-OR onto PSU output', 'door keeps working in outages'],
@@ -209,7 +209,7 @@ def wiring(pm):
 
     s.legend(20, 360, [(WIRE_AC, '120 V AC (licensed electrician)', None), (WIRE_12V, '+12 V DC / motor', None),
                        (WIRE_GND, 'GND / common', None), (WIRE_SIG, 'Signal / control', None),
-                       (WIRE_SIG, 'SSR control (12 V)', '6,3')])
+                       (WIRE_SIG, 'Relay/SSR control (12 V)', '6,3')])
     s.box(20, 480, 290, 160, 'Rules', ['Mains and 12 V in SEPARATE boxes', 'GFCI upstream of everything',
                                        'Bond all metal to ground', 'UF-B / THWN in conduit outdoors',
                                        'Rodent-proof: conduit + gland seals', 'Label every cable both ends',
@@ -241,8 +241,8 @@ def plumbing():
     s.line(1060, 425, 900, 425, WATER, 5)
     # drum
     s.rect(600, 330, 300, 250, fill='#e8f4fb', stroke=INK, sw=2, rx=10)
-    s.text(610, 352, '30 gal food-grade drum (inside coop,', 12, weight='bold')
-    s.text(610, 368, 'on a 24" stand, lid screened)', 12, weight='bold')
+    s.text(610, 352, '30 gal drum in the EXTERIOR service', 12, weight='bold')
+    s.text(610, 368, 'station (18" stand, insulated side)', 12, weight='bold')
     s.rect(603, 430, 294, 147, fill='#bfe3f5', stroke='none')
     s.line(603, 430, 897, 430, WATER, 2, '5,3')
     # floats
@@ -255,19 +255,19 @@ def plumbing():
     s.line(840, 360, 840, 540, INK, 1.5)
     s.rect(835, 540, 10, 25, fill='#555', stroke='none')
     s.text(760, 556, 'DS18B20 (J8)', 11, 'end')
-    s.text(610, 520, 'de-icer (SSR2) in winter', 11, color=MUTED)
+    s.text(610, 520, 'de-icer (relay 2) in winter', 11, color=MUTED)
     # overflow
     s.line(897, 360, 960, 360, WATER, 3)
     s.line(960, 360, 960, 620, WATER, 3, '6,4')
     s.text(968, 600, '3/4" overflow to outside', 11, color=MUTED)
-    s.text(968, 614, '(protects the litter if a float sticks)', 11, color=MUTED)
+    s.text(968, 614, '(drains to grade, away from the station)', 11, color=MUTED)
     # outlet to nipples
     s.line(600, 560, 300, 560, WATER, 4)
     s.line(300, 560, 300, 600, WATER, 4)
     s.line(120, 600, 480, 600, WATER, 4)
     for xx in range(140, 480, 40):
         s.line(xx, 600, xx, 612, INK, 2)
-    s.text(120, 630, '3/4" PVC drinker line, 8 horizontal nipples/cups per 10 ft (1 per 6 birds, 10+ total), 12-14" high',
+    s.text(120, 630, '3/4" PVC through the coop wall -> drinker line inside, 10+ horizontal nipples/cups, 12-14" high',
            11, color=MUTED)
     s.box(20, 380, 520, 150, 'Tier 1 (low-tech)', [
         'Skip the solenoid: fill the drum by hand with the hose,',
@@ -277,7 +277,7 @@ def plumbing():
         'Tier 2 adds the solenoid + floats + DS18B20 (this drawing).'], fill='#f0fff4', stroke=GREEN)
     s.text(20, 90, 'Winter: disconnect and drain the hose below freezing (the firmware also refuses to fill '
            'when the water is near 0 C).', 12, color='#c0392b')
-    s.text(20, 108, 'Hand-fill through the lid, or use a heated hose rated for drinking water.', 12, color='#c0392b')
+    s.text(20, 108, 'Hand-fill the drum from outside through the station doors, or use a heated drinking-water hose.', 12, color='#c0392b')
     s.save('plumbing-diagram.svg')
 
 
@@ -286,7 +286,7 @@ def floor_plan():
     k = 42          # px per ft
     ox, oy = 110, 170
     W, D = 20, 10   # ft (east-west, north-south)
-    s = Svg(ox + W * k + 420, oy + D * k + 170, 'Coop floor plan: 10 ft x 20 ft (200 sq ft), north up')
+    s = Svg(ox + W * k + 480, oy + D * k + 170, 'Coop floor plan: 10 ft x 20 ft (200 sq ft) + exterior feed/water station, north up')
 
     def P(x, y):
         return ox + x * k, oy + y * k
@@ -329,50 +329,59 @@ def floor_plan():
     for wx in (3, 7.5, 11.5):
         a, b = P(wx, 10)
         s.rect(a, b - 5, 2 * k, 10, fill='#cfe8ff', stroke=INK, sw=1)
-    s.text(P(7.5, 10)[0], P(0, 10)[1] + 26, '24"x36" windows: 1/2" hardware cloth + sliding/hinged shutters', 10, 'start', MUTED)
+    s.text(P(7.5, 10)[0], P(0, 10)[1] + 26, '24"x36" windows: 1/2" hardware cloth + hinged storm shutters', 10, 'start', MUTED)
     a, b = P(0, 5)
     s.rect(a - 5, b - k, 10, 2 * k, fill='#cfe8ff', stroke=INK, sw=1)
     s.text(a + 10, b + 4 + k * 1.3, 'window (west)', 10, 'start', MUTED)
 
-    # feeder + waterer + electrical
-    fx, fy = P(9.5, 4.2)
-    s.circle(fx, fy, 0.9 * k, fill='#f3e3c3')
-    s.text(fx, fy + 4, 'FEEDERS', 11, 'middle', weight='bold')
-    s.text(fx, fy + 18, '2x hanging / treadle', 9, 'middle', MUTED)
-    wx, wy = P(12.5, 8.2)
-    s.circle(wx, wy, 0.9 * k, fill='#d6ecfa')
-    s.text(wx, wy + 4, '30 gal DRUM', 11, 'middle', weight='bold')
-    s.line(wx, wy - 0.9 * k, wx, P(0, 6)[1], WATER, 4)
-    s.line(P(11, 6)[0], P(0, 6)[1], P(16, 6)[0], P(0, 6)[1], WATER, 4)
-    s.text(P(16.1, 6)[0], P(0, 6)[1] + 4, 'nipple/cup line', 10, 'start', MUTED)
-    hx, hy = P(8.8, 8.3)
-    s.rect(hx - 0.7 * k, hy - 0.7 * k, 1.4 * k, 1.4 * k, fill='#f3e3c3', stroke=INK)
-    s.text(hx, hy + 4, 'HOPPER', 10, 'middle', weight='bold')
-    s.text(hx, hy + 16, '+ auger', 9, 'middle', MUTED)
-    ex, ey = P(19.4, 3.2)
-    s.rect(ex - 10, ey, 16, 1.2 * k, fill='#fff3b0', stroke=WIRE_AC, sw=2)
-    s.text(ex - 16, ey + 14, 'mains box', 10, 'end', WIRE_AC)
-    s.rect(ex - 10, ey + 1.4 * k, 16, 0.9 * k, fill='#dcecff', stroke=WIRE_SIG, sw=2)
-    s.text(ex - 16, ey + 1.4 * k + 14, 'controller', 10, 'end', WIRE_SIG)
+    # exterior feed + water service station (east wall, north end)
+    sx, sy = P(20, 0.5)
+    s.rect(sx + 4, sy, 2.5 * k, 5 * k, fill='#f3ead9', stroke=WALL, sw=3)
+    s.text(sx + 1.25 * k + 4, sy - 8, 'SERVICE STATION (outside)', 11, 'middle', weight='bold')
+    bx, by = P(20.2, 3.25)
+    s.rect(bx, by, 2.1 * k, 2.0 * k, fill='#f3e3c3', stroke=INK)
+    s.text(bx + 1.05 * k, by + 0.9 * k, 'FEED BIN', 10, 'middle', weight='bold')
+    s.text(bx + 1.05 * k, by + 0.9 * k + 13, '~350 lb', 9, 'middle', MUTED)
+    dcx, dcy = P(21.25, 1.83)
+    s.circle(dcx, dcy, 0.83 * k, fill='#d6ecfa')
+    s.text(dcx, dcy + 4, '30 gal DRUM', 9, 'middle', weight='bold')
+    s.text(P(22.7, 0)[0] + 10, P(0, 2.2)[1], 'doors open', 10, 'start', MUTED)
+    s.text(P(22.7, 0)[0] + 10, P(0, 2.2)[1] + 14, 'from outside', 10, 'start', MUTED)
+    # indoor trough fed through the wall
+    tx, ty = P(18.6, 3.3)
+    s.rect(tx, ty, 1.1 * k, 1.8 * k, fill='#f3e3c3', stroke=INK)
+    s.text(tx - 6, ty + 0.9 * k + 4, 'trough', 10, 'end', MUTED)
+    s.line(P(19.7, 0)[0], P(0, 4.2)[1], P(20.2, 0)[0], P(0, 4.2)[1], '#b07b2c', 4)
+    # drinker line from the drum through the wall
+    pts = [P(20.4, 1.75), P(15, 1.75), P(15, 4.2), P(10, 4.2)]
+    s.poly(pts, stroke=WATER, sw=4, close=False)
+    s.text(P(10, 4.2)[0], P(0, 4.2)[1] + 16, 'nipple/cup line (heat cable in winter)', 10, 'start', MUTED)
+    # electrical boxes (inside, east wall, 5 ft up)
+    ex, ey = P(19.4, 0.6)
+    s.rect(ex, ey, 14, 0.9 * k, fill='#fff3b0', stroke=WIRE_AC, sw=2)
+    s.text(ex - 6, ey + 14, 'mains box (5 ft up)', 10, 'end', WIRE_AC)
+    s.rect(ex, ey + 1.0 * k, 14, 0.8 * k, fill='#dcecff', stroke=WIRE_SIG, sw=2)
+    s.text(ex - 6, ey + 1.0 * k + 14, 'controller', 10, 'end', WIRE_SIG)
     for lx in (6, 14):
         a, b = P(lx, 5)
         s.circle(a, b, 8, fill='#fffbe6', stroke=WIRE_AC)
     s.text(P(6, 5)[0] + 12, P(0, 5)[1] + 4, 'light', 10, 'start', WIRE_AC)
     a, b = P(2.5, 5)
     s.text(a, b + 70, 'PIR aimed over roosts', 10, 'start', MUTED)
-    s.text(P(20, 0)[0] + 16, P(0, 0.4)[1], 'gable fan (J14)', 10, 'start', MUTED)
+    s.text(P(20, 0)[0] + 16, P(0, -0.5)[1], 'gable fan (J14) above', 10, 'start', MUTED)
 
     # compass + notes
-    cx0, cy0 = ox + W * k + 90, oy + 30
+    cx0, cy0 = ox + W * k + 250, oy + 30
     s.poly([(cx0, cy0 - 22), (cx0 - 9, cy0 + 8), (cx0 + 9, cy0 + 8)], fill=INK)
     s.text(cx0, cy0 + 26, 'N', 14, 'middle', weight='bold')
-    notes = ['Floor: 3/4" PT plywood + sheet vinyl,', '  8-12" deep-litter pine shavings',
+    notes = ['Floor: 3/4" PT plywood, porch enamel,', '  8-12" deep-litter pine shavings',
              'Ventilation >= 20 sq ft: full soffit +', '  ridge vent + 3 windows + gables,',
              '  all 1/2" hardware cloth', 'Roosts higher than nest boxes',
              '  (boxes 18-24" off floor)', 'Keep feed/water out from under roosts',
-             '4 sq ft/bird indoors = 200 sq ft']
+             '4 sq ft/bird indoors = 200 sq ft',
+             'Feed + water filled from OUTSIDE:', '  gravity bin -> wall slot -> trough,', '  drum -> wall -> nipple line']
     for i, n in enumerate(notes):
-        s.text(ox + W * k + 40, oy + 90 + i * 17, n, 11, color=MUTED)
+        s.text(ox + W * k + 190, oy + 90 + i * 17, n, 11, color=MUTED)
     s.save('coop-floor-plan.svg')
 
 
@@ -422,19 +431,30 @@ def elevations():
             (ox2 + (D + over) * k, y_top + over * 4 / 12 * k)], stroke=INK, sw=5, close=False)
     s.rect(ox2 + D / 2 * k - 14, ridge_y - 14, 28, 8, fill='#9aa5b1', stroke=INK, sw=1)
     s.text(ox2 + D / 2 * k, ridge_y - 22, 'ridge vent', 10, 'middle', MUTED)
-    # people door
-    s.rect(ox2 + 6.2 * k, y_floor - 80 / 12 * k, 3 * k, 80 / 12 * k, fill='#ffffff', stroke=INK)
-    s.text(ox2 + 7.7 * k, y_floor - 3 * k, '36"x80"', 10, 'middle', MUTED)
-    # nest bay (north side = left in this view from east)
-    s.rect(ox2 - 1.5 * k, y_floor - 3.6 * k, 1.5 * k, 2.2 * k, fill='#fff3d6', stroke=WALL, sw=2)
-    s.text(ox2 - 1.6 * k, y_floor - 3.9 * k, 'nest bay', 10, 'end', MUTED)
+    # viewed from the east: south is on the LEFT, north on the RIGHT
+    # people door (south end of the east wall)
+    s.rect(ox2 + 0.8 * k, y_floor - 80 / 12 * k, 3 * k, 80 / 12 * k, fill='#ffffff', stroke=INK)
+    s.text(ox2 + 2.3 * k, y_floor - 3 * k, '36"x80"', 10, 'middle', MUTED)
+    # exterior feed + water service station (north end, in front of the wall)
+    st_x0, st_x1 = ox2 + 4.5 * k, ox2 + 9.5 * k
+    st_top = y_floor - 72 / 12 * k
+    s.rect(st_x0, st_top, st_x1 - st_x0, y_floor - st_top + floor_h * k, fill='#e9dcc4', stroke=WALL, sw=2)
+    s.poly([(st_x0 - 6, st_top - 4), (st_x1 + 6, st_top - 4), (st_x1 + 6, st_top - 12), (st_x0 - 6, st_top - 12)],
+           fill='#9aa5b1', stroke=INK, sw=1)
+    s.line((st_x0 + st_x1) / 2, st_top + 4, (st_x0 + st_x1) / 2, y_floor, WALL, 1.5)
+    s.text((st_x0 + st_x1) / 2, st_top + 2.2 * k, 'FEED + WATER', 10, 'middle', weight='bold')
+    s.text((st_x0 + st_x1) / 2, st_top + 2.2 * k + 13, 'service station', 10, 'middle', MUTED)
+    s.text((st_x0 + st_x1) / 2, st_top + 2.2 * k + 26, '(2 doors, fill from here)', 9, 'middle', MUTED)
+    # nest bay (north side = right in this view)
+    s.rect(ox2 + D * k, y_floor - 3.6 * k, 1.5 * k, 2.2 * k, fill='#fff3d6', stroke=WALL, sw=2)
+    s.text(ox2 + D * k + 1.6 * k, y_floor - 3.9 * k, 'nest bay', 10, 'start', MUTED)
     # gable vent + fan
     s.rect(ox2 + 4.2 * k, y_top - 0.9 * k, 1.6 * k, 0.8 * k, fill='#cfe8ff', stroke=INK)
     s.text(ox2 + 6 * k, y_top + 0.9 * k, 'gable vent + 12 V fan (above)', 10, 'start', MUTED)
     s.dim(ox2, g + 10, ox2 + D * k, g + 10, "10'-0\"", 20)
     s.dim(ox2 + D * k + 40, ridge_y, ox2 + D * k + 40, g, "~10'-9\" ridge", 30)
     s.dim(ox2 - 60, y_floor, ox2 - 60, g, '~12"', 0)
-    s.text(ox2 + D * k / 2, ridge_y - 44, 'EAST (END) ELEVATION', 14, 'middle', weight='bold')
+    s.text(ox2 + D * k / 2, ridge_y - 44, 'EAST (END) ELEVATION (south on the left)', 14, 'middle', weight='bold')
     s.text(60, 580, 'Framing: 4x6 PT skids on 4" compacted gravel; 2x6 PT floor joists 16" o.c.; 2x4 studs 16" o.c.; '
            '2x6 rafters 24" o.c. with collar ties; 2x4 purlins 24" o.c.; 29 ga ribbed steel roofing.', 11, color=MUTED)
     s.text(60, 598, 'Check rafter size/spacing against your local ground snow load before building (see coop-build-plan.md).',
